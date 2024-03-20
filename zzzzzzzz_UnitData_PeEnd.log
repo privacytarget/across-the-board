@@ -1,0 +1,85 @@
+8:05 AM 1/20/2024call "C:\System.sav\Util\TDC\MCPP\UnitData\Subs\UnitData_ROUNTER.CMD" "UUT_INFO,BCU_INFO,UEFIVAR_INFO,OA3_INFO,SHAREDATA_INFO,OSINFOINI,FUPDATE" "PASS3_PeEnd" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:32:40.44] Beginning of the UnitData_ROUNTER.CMD args: "UUT_INFO,BCU_INFO,UEFIVAR_INFO,OA3_INFO,SHAREDATA_INFO,OSINFOINI,FUPDATE" "PASS3_PeEnd"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[975]
+uiaMsg=[ENTERED_LOGOUT_PE]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+09/16/2023  01:32 AM            11,805 00092200MD3B_DPS
+               1 File(s)         11,805 bytes
+               0 Dir(s)  41,448,366,080 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump BCU variable ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BcuInfo_x64.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+==== Dump UEFI Variables ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_dumpUEFIVariable.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Collect OA3 Information ======
+pathOA3TraceXml=[c:\system.sav\Logs\OA3\OA3.Trace.xml]
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" oa3 "c:\system.sav\Logs\OA3\OA3.Trace.xml" "/HardwareVerificationData"
+errorlevel=0
+==== Collect ShareData.ini Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="c:\System.sav\WDT\ShareData.INI" -section="Status"
+errorlevel=0
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="c:\System.sav\WDT\ShareData.INI" -section="ProductBinding"
+errorlevel=0
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="c:\System.sav\WDT\ShareData.INI" -section="OA3_CBR"
+errorlevel=0
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="c:\System.sav\WDT\ShareData.INI" -section="PC_GBU"
+errorlevel=0
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="c:\System.sav\WDT\ShareData.INI" -section="OA3"
+errorlevel=0
+==== Collect ShareData.ini Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="C:\System.sav\Logs\OSEnh\OSFeatureStatus.ini" -section="HVCI"
+errorlevel=0
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="C:\System.sav\Logs\OSEnh\OSFeatureStatus.ini" -section="VBS"
+errorlevel=0
+==== Collect info.bom Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS3_PeEnd" -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="C:\System.sav\info.bom" -section="Factory Update"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 

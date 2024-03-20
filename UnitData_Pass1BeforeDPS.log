@@ -1,0 +1,76 @@
+8:06 AM 1/20/2024call "c:\System.sav\Util\TDC\MCPP\UnitData\Subs\UnitData_ROUNTER.CMD" "MAIN_INFO TIMESTAMP_ADD BCU_INFO" "UnitData_Pass1InitXml" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [10:26:33.56] Beginning of the UnitData_ROUNTER.CMD args: "MAIN_INFO TIMESTAMP_ADD BCU_INFO" "UnitData_Pass1InitXml"               
+#############################################################
+There's no CPSUnitData_SN_TIMESTAMP.XML in c:\system.sav\WDT\Logs\
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\System.sav\LOGS\UnitData
+
+File Not Found
+Copy XML from template...
+copy /y "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\Template.xml" "c:\system.sav\WDT\Logs\CPSUnitData_SN_timestamp.XML"
+        1 file(s) copied.
+CPSUnitData_SN_timestamp.XML
+xmlName=[CPSUnitData_SN_timestamp.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_SN_timestamp.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[941]
+uiaMsg=[Entered TDC DPS process...]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[]
+INI_ORDER_PO=[]
+Search master PO, pass1, before DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)   9,458,343,936 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Dump Main information ======
+        1 file(s) copied.
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="UnitData_Pass1InitXml" -uiaCode="941" -xml="c:\system.sav\WDT\Logs\CPSUnitData_SN_timestamp.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" init C:\system.sav\00092200MD3B_DPS
+errorlevel=0
+Return code is zero, check more...
+Check if node LOG File created successfully...
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+Node LOG File is health 
+==== Add timestamp of each UIA code change ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="UnitData_Pass1InitXml" -uiaCode="941" -xml="c:\system.sav\WDT\Logs\CPSUnitData_SN_timestamp.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump BCU variable ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BcuInfo_x64.exe"  -passName="UnitData_Pass1InitXml" -uiaCode="941" -xml="c:\system.sav\WDT\Logs\CPSUnitData_SN_timestamp.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_SN_TIMESTAMP.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_SN_timestamp.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+ren "c:\system.sav\WDT\Logs\CPSUnitData_SN_timestamp.XML" "CPSUnitData_00092200MD_20230428102634.XML"
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 

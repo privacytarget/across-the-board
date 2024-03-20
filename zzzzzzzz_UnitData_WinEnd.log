@@ -1,0 +1,61 @@
+8:05 AM 1/20/2024call "C:\System.sav\Util\TDC\MCPP\UnitData\Subs\UnitData_ROUNTER.CMD" "UUT_INFO,APPX_INFO,FEATURE_INFO" "PASS3_WinEnd" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:18:39.32] Beginning of the UnitData_ROUNTER.CMD args: "UUT_INFO,APPX_INFO,FEATURE_INFO" "PASS3_WinEnd"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[971]
+uiaMsg=[Finished - 2nd Specialize]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,668,251,136 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS3_WinEnd" -uiaCode="971" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Collect APPX Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS3_WinEnd" -uiaCode="971" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" appx online
+errorlevel=0
+==== Collect Feature Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS3_WinEnd" -uiaCode="971" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" feature online
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 

@@ -1,0 +1,3473 @@
+{
+    "version": "1.1.522",
+    "data": {
+        "auth0_user_id": {
+            "params": "auth0_user_id",
+            "source": "settingsManager"
+        },        
+        "user_ref_id": {
+            "params": {
+                "action": "GetProperty",
+                "appid": "vso",
+                "name": "user_ref_id"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },            
+            "source": "subdb"
+        },
+        "ASKPP_Event_118": {
+            "params": "ASKPP_Event_118",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "csp_client_id": {
+            "params":{
+                "action": "ClientID",
+                "appid": "a053060c-3a34-11e4-8a01-005056b7244f"},
+            "refresh": {
+                "harvestIfEqWithTimeout": {
+                    "value":null,
+                    "timeout":600000
+                },
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "csp"
+        },
+        "CSP.ClientId":{
+            "operationConfig": {
+                "name": "IfCondition",
+                "params":{
+                    "conditions":[
+                        {"operation":"equal","left_operand": "{{csp_client_id}}","right_operand": null,"result": "{{product_wss_csp_id}}"}
+                        ],
+                    "else": "{{csp_client_id}}"
+                }
+            },
+            "params": ["csp_client_id","product_wss_csp_id"],
+            "source": "dataCollectorAsMap"
+        },
+        "CoreUI.CSP.Policy.TestEvent.Enabled": {
+            "params": {
+                "action": "PolicyItems",
+                "appid": "df77019b-eb61-4417-b1a7-ad644a389fb4",
+                "itemName": "Test_Event_To_CSP"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "meta": [
+                    0,
+                    1
+                ],
+                "onMismatch": 0,
+                "ruleName": "in"
+            },
+            "source": "csp"
+        },
+        "Device.Antimalware.Provider.Enabled": {
+            "operationConfig": {
+                "name": "at",
+                "params": "enabled"
+            },
+            "params": {
+                "action": "antimalware_status",
+                "data": {
+                    "mask": 4096,
+                    "complement": false
+                }
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "MSC.Wsc_AV_Provider_Changed"
+                ]
+            },
+            "source": "wmiCustom"
+        },
+        "Device.Antimalware.Provider.Snoozed": {
+            "operationConfig": {
+                "name": "at",
+                "params": "enabled"
+            },
+            "params": {
+                "action": "antimalware_status",
+                "data": {
+                    "mask": 8192,
+                    "complement": false
+                }
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "MSC.Wsc_AV_Provider_Changed"
+                ]
+            },
+            "source": "wmiCustom"
+        },
+        "Device.Antimalware.Provider.Off": {
+            "operationConfig": {
+                "name": "at",
+                "params": "disabled"
+            },
+            "params": {
+                "action": "antimalware_status",
+                "data": {
+                    "mask": 12288,
+                    "complement": true
+                }
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "MSC.Wsc_AV_Provider_Changed"
+                ]
+            },
+            "source": "wmiCustom"
+        },
+        "Device.Firewall.Provider.Enabled": {
+            "operationConfig": {
+                "name": "at",
+                "params": "enabled"
+            },
+            "params": {
+                "action": "firewall_status",
+                "data": {
+                    "mask": 4096,
+                    "complement": false
+                }
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "MSC.Wsc_FW_Provider_Changed"
+                ]
+            },
+            "source": "wmiCustom"
+        },
+        "Device.Firewall.Provider.Snoozed": {
+            "operationConfig": {
+                "name": "at",
+                "params": "enabled"
+            },
+            "params": {
+                "action": "firewall_status",
+                "data": {
+                    "mask": 8192,
+                    "complement": false
+                }
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "MSC.Wsc_FW_Provider_Changed"
+                ]
+            },
+            "source": "wmiCustom"
+        },
+        "Device.Firewall.Provider.Off": {
+            "operationConfig": {
+                "name": "at",
+                "params": "disabled"
+            },
+            "params": {
+                "action": "firewall_status",
+                "data": {
+                    "mask": 12288,
+                    "complement": true
+                }
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "MSC.Wsc_FW_Provider_Changed"
+                ]
+            },
+            "source": "wmiCustom"
+        },
+        "Device.Display.ScreenHeight": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "CurrentVerticalResolution",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Display.ScreenWidth": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "CurrentHorizontalResolution",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Microsoft.L3.Featured.PC": {
+            "params": "Device/OEMFeaturedPC",
+            "source": "settingsManager",
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            }
+        },
+        "Device.Microsoft.Machine.Guid": {
+            "params": {
+                "name": "MachineGuid",
+                "path": "HKLM\\SOFTWARE\\Microsoft\\Cryptography",
+                "wow64_64": true
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "Device.Network.Connected": {
+            "params": {
+                "action": "network_status",
+                "data": {}
+            },
+            "refresh": {
+                "harvestTimeout": 60000
+            },
+            "source": "wmiCustom"
+        },
+        "Device.OS.Architecture": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_OperatingSystem",
+                "column": "OSArchitecture",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.OS.Bash.Version": {
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "params": {
+                "directory": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}",
+                "file": "bash.exe"
+            },
+            "source": "fileVersionEx"
+        },
+        "Device.OS.Type": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_OperatingSystem",
+                "column": "Caption",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "device_os_version": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_OperatingSystem",
+                "column": "Version",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Screen.Resolution": {
+            "operationConfig": {
+                "name": "join",
+                "params": "x"
+            },
+            "params": [
+                "Device.Display.ScreenWidth",
+                "Device.Display.ScreenHeight"
+            ],
+            "source": "dataCollector"
+        },
+        "Device.System.Ram": {
+            "operationConfig": {
+                "name": "divide",
+                "params": 1048576
+            },
+            "params": {
+                "aggregatorName": "summation",
+                "className": "Win32_PhysicalMemory",
+                "column": "Capacity",
+                "preprocessorName": "toInt"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.System.Ram.MB": {
+            "operationConfig": {
+                "name": "round",
+                "params": {
+                    "multiple": 1024,
+                    "roundUp": false
+                }
+            },
+            "params": "Device.System.Ram",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "Device.TimeZone.Bias": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_TimeZone",
+                "column": "Bias",
+                "preprocessorName": "toInt"
+            },
+            "rule": {
+                "meta": {
+                    "max": 840,
+                    "min": -720
+                },
+                "ruleName": "inRange"
+            },
+            "source": "wmi"
+        },
+        "Device.TimeZone.Bias.Hours": {
+            "operationConfig": {
+                "name": "divide",
+                "params": 60
+            },
+            "params": "Device.TimeZone.Bias",
+            "source": "dataCollector"
+        },
+        "Device.User.Folder.Creation.Date": {
+            "params": {
+                "action": "oobe_time",
+                "data": {}
+            },
+            "source": "wmiCustom"
+        },
+        "Device.User.Folder.Creation.Date.ISO": {
+            "operationConfig": {
+                "name": "dateToISO",
+                "params": "dateTime"
+            },
+            "params": "Device.User.Folder.Creation.Date",
+            "source": "dataCollector"
+        },
+        "Device.User.Folder.Creation.Date.Incremental.Days": {
+            "operationConfig": {
+                "name": "timeSince",
+                "params": "days"
+            },
+            "params": "Device.User.Folder.Creation.Date",
+            "refresh": {
+                "operationTimeout": 0
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "Device.User.Folder.Creation.Date.Incremental.Hours": {
+            "operationConfig": {
+                "name": "timeSince",
+                "params": "hours"
+            },
+            "params": "Device.User.Folder.Creation.Date",
+            "refresh": {
+                "operationTimeout": 0
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "Device.User.Folder.Creation.Date.Incremental.Minutes": {
+            "operationConfig": {
+                "name": "timeSince",
+                "params": "minutes"
+            },
+            "params": "Device.User.Folder.Creation.Date",
+            "refresh": {
+                "operationTimeout": 0
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "Analytics.ContextId": {
+            "params": {
+                "name": "Analytics.ContextId",
+                "obfuscated": true
+            },
+            "refresh": {
+                "harvestIfEq": null
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "Infected_Items_112": {
+            "params": "Infected_Items_112",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "Legacy.Cohort.Id": {
+            "params": {
+                "name": "cohortsegid",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "MFE.MSS.Version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\McAfee Security Scan"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "MTM.Scripts.Folder.CreationDate": {
+            "params": {
+                "directory": "McAfeeWatchdog\\Scripts",
+                "folderId": "{F7F1ED05-9F6D-47A2-AAAE-29D317C6F066}"
+            },
+            "source": "creationDate"
+        },
+        "MTM.Scripts.Folder.CreationDate.ISO": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": "MTM.Scripts.Folder.CreationDate",
+            "source": "dataCollector"
+        },
+        "MTM.Service.Version": {
+            "operationConfig": {
+                "name": "join",
+                "params": "."
+            },
+            "params": "MTM.Service.Version.Split",
+            "source": "dataCollector"
+        },
+        "MTM.Service.Version.Split": {
+            "operationConfig": {
+                "name": "split",
+                "params": ","
+            },
+            "params": "$(FOLDERID_ProgramFilesCommon)\\McAfeeWatchdog\\McAfeeWatchdogService.exe",
+            "source": "fileVersion"
+        },
+        "MTM.System.SerialNumber": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_ComputerSystemProduct",
+                "column": "IdentifyingNumber",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "device_oobe_time_iso": {
+            "params": {
+                "name": "TimeZero"
+            },
+            "refresh": {
+                "harvestTimeout": 1000
+            },
+            "source": "UptimeTracker"
+        },
+        "hit_time_working_seconds": {
+            "params": {
+                "name": "WorkingTime"
+            },
+            "refresh": {
+                "harvestTimeout": 1000
+            },
+            "source": "UptimeTracker"
+        },
+        "hit_time_internet_seconds": {
+            "params": {
+                "name": "InternetTime"
+            },
+            "refresh": {
+                "harvestTimeout": 1000
+            },
+            "source": "UptimeTracker"
+        },
+        "product_ngm_cohort_id": {
+            "params": {
+                "action": "CachedData",
+                "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+                "itemName": "id",
+                "serviceName": "CSP_COHORT_V1"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "csp"
+        },
+        "NGM.Enabled": {
+            "operationConfig": {
+                "name": "and"
+            },
+            "params": [
+                "NGM.WSS.PolicyItem.ScheduledTask.Enabled",
+                "NGM.WSS.Msg.Enabled"
+            ],
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "onMismatch": false,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "NGM.WSS.Message.PreUninstall.Enabled": {
+            "params": "NGM.WSS.Message.PreUninstall.Enabled.Raw",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "meta": [
+                    0,
+                    1
+                ],
+                "ruleName": "in"
+            },
+            "source": "dataCollector"
+        },
+        "NGM.WSS.Message.PreUninstall.Enabled.Raw": {
+            "params": {
+                "action": "AppPolicyItems",
+                "appid": "eb8e0511-f15f-4b76-93c5-d7363ef0851d",
+                "policy": "message_categories.pre_uninstall.enabled",
+                "sub_appid": "a053060c-3a34-11e4-8a01-005056b7244f"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "meta": [
+                    0,
+                    1
+                ],
+                "onMismatch": null,
+                "ruleName": "in"
+            },
+            "source": "csp"
+        },
+        "NGM.WSS.Message.Registration.Enabled": {
+            "params": "NGM.WSS.Message.Registration.Enabled.Raw",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "meta": [
+                    0,
+                    1
+                ],
+                "ruleName": "in"
+            },
+            "source": "dataCollector"
+        },
+        "NGM.WSS.Message.Registration.Enabled.Raw": {
+            "params": {
+                "action": "AppPolicyItems",
+                "appid": "eb8e0511-f15f-4b76-93c5-d7363ef0851d",
+                "policy": "message_categories.registration.enabled",
+                "sub_appid": "a053060c-3a34-11e4-8a01-005056b7244f"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "meta": [
+                    0,
+                    1
+                ],
+                "onMismatch": null,
+                "ruleName": "in"
+            },
+            "source": "csp"
+        },
+        "NGM.WSS.Message.SubscriptionMilestone.Enabled": {
+            "params": "NGM.WSS.Message.SubscriptionMilestone.Enabled.Raw",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "meta": [
+                    0,
+                    1
+                ],
+                "ruleName": "in"
+            },
+            "source": "dataCollector"
+        },
+        "NGM.WSS.Message.SubscriptionMilestone.Enabled.Raw": {
+            "params": {
+                "action": "AppPolicyItems",
+                "appid": "eb8e0511-f15f-4b76-93c5-d7363ef0851d",
+                "policy": "message_categories.milestone.enabled",
+                "sub_appid": "a053060c-3a34-11e4-8a01-005056b7244f"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "meta": [
+                    0,
+                    1
+                ],
+                "onMismatch": null,
+                "ruleName": "in"
+            },
+            "source": "csp"
+        },
+        "NGM.WSS.Msg.Enabled": {
+            "operationConfig": {
+                "name": "or"
+            },
+            "params": [
+                "NGM.WSS.Message.SubscriptionMilestone.Enabled.Raw",
+                "NGM.WSS.Message.Registration.Enabled.Raw",
+                "NGM.WSS.Message.PreUninstall.Enabled.Raw"
+            ],
+            "source": "dataCollector"
+        },
+        "NGM.WSS.PolicyItem.ScheduledTask.Enabled": {
+            "params": {
+                "action": "AppPolicyItems",
+                "appid": "eb8e0511-f15f-4b76-93c5-d7363ef0851d",
+                "policy": "context_scheduled_task",
+                "sub_appid": "a053060c-3a34-11e4-8a01-005056b7244f"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "meta": [
+                    0,
+                    1
+                ],
+                "onMismatch": false,
+                "ruleName": "in"
+            },
+            "source": "csp"
+        },
+        "OAS_AMEngineScannedCount_116": {
+            "params": "OAS_AMEngineScannedCount_116",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "ODSCmd_succceeded_119": {
+            "params": "ODSCmd_succceeded_119",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "ODS_Scan_Succeeded_109": {
+            "params": "ODS_Scan_Succeeded_109",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "ODS_Started_110": {
+            "params": "ODS_Started_110",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "OnlineServerCertExchangeDen_115": {
+            "params": "OnlineServerCertExchangeDen_115",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "OnlineServerFileExchangeDen_117": {
+            "params": "OnlineServerFileExchangeDen_117",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "Quarantined_Items_113": {
+            "params": "Quarantined_Items_113",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "Raptor_Monitor_120": {
+            "params": "Raptor_Monitor_120",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "Resolved_Items_114": {
+            "params": "Resolved_Items_114",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "Scanned_Items_111": {
+            "params": "Scanned_Items_111",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "System32.Creation.Date.ISO": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": {
+                "folderId": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}"
+            },
+            "source": "creationDate"
+        },
+        "WSS.Account.ID": {
+            "params": {
+                "name": "accnt_id",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.App.Name": {
+            "params": {
+                "name": "app_name",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "source": "registry"
+        },
+        "WSS.Account.ID.Exists": {
+            "operationConfig": {
+                "name": "isValueValid"
+            },
+            "params": "WSS.Account.ID",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Build.Type": {
+            "operationConfig": {
+                "name": "transform",
+                "params": {
+                    "0": "standard",
+                    "1": "commonBuild",
+                    "null": "standard"
+                }
+            },
+            "params": {
+                "name": "CommonBuild",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Subscription.Affiliate.ID": {
+            "params": {
+                "action": "GetProperty",
+                "appid": "vso",
+                "name": "affid"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "subdb"
+        },
+        "WSS.Affiliate.ID": {
+            "params": {
+                "name": "affid",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "product_wss_affiliate_id": {
+            "operationConfig": {
+                "params": 0,
+                "name": "at"
+            },
+            "params": "WSS.Affiliate.ID.Split",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Affiliate.ID.Split": {
+            "operationConfig": {
+                "name": "split",
+                "params": "-"
+            },
+            "params": "WSS.Affiliate.ID",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "product_affiliate_id": {
+            "params": "product_wss_affiliate_id",
+            "source": "dataCollector"
+        },
+        "analytics_governance_version": {
+            "params": "Analytics.Content.Version",
+            "source": "dataCollector"
+        },
+        "product_analytics_sdk_version": {
+            "params": "analytics.sdk.version",
+            "source": "dataCollector"
+        },
+        "device_id": {
+            "params": "Hit.UserID",
+            "source": "dataCollector"
+        },
+        "WSS.AlertManager.Version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\McAfee\\AlertManager"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.Amcore.Version": {
+            "params": {
+                "name": "szAMCoreVersion",
+                "path": "HKLM\\SOFTWARE\\McAfee\\AVSolution\\AVS\\AVS"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.Analytics.Folder.Creation.Date.ISO": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": {
+                "directory": "McAfee\\ClientAnalytics",
+                "folderId": "{F7F1ED05-9F6D-47A2-AAAE-29D317C6F066}"
+            },
+            "source": "creationDate"
+        },
+        "WSS.Analytics.Scripts.Creation.Date.ISO": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": {
+                "directory": "McAfee\\ClientAnalytics\\Scripts",
+                "folderId": "{F7F1ED05-9F6D-47A2-AAAE-29D317C6F066}"
+            },
+            "source": "creationDate"
+        },
+        "WSS.CSP.Version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\McAfee\\CSP"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_coreui_version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.CoreUI.Enabled": {
+            "params": {
+                "name": "Enabled",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.CoreUI.Module.Version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\McAfee\\CoreUI\\CoreUIModules"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.CoreUI.Version": {
+            "params": {
+                "name": "CoreUIVersion",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_culture_id": {
+            "params": {
+                "name": "culture",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Eula.Accepted": {
+            "operationConfig": {
+                "name": "or"
+            },
+            "params": [
+                "WSS.Account.ID.Exists",
+                "WSS.Flags.Eula.Cleared"
+            ],
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Flags.Eula.Cleared": {
+            "operationConfig": {
+                "name": "equal",
+                "params": 0
+            },
+            "params": "WSS.Flags.Eula.Set",
+            "source": "dataCollector"
+        },
+        "WSS.Eula.Accepted.Date": {
+            "operationConfig": {
+                "name": "wssDateToDate"
+            },
+            "params": {
+                "name": "EulaDt",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Eula.Accepted.Date.Epoch": {
+            "operationConfig": {
+                "name": "dateToEpoch"
+            },
+            "params": "WSS.Eula.Accepted.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Eula.Accepted.Date.ISO": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": "WSS.Eula.Accepted.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Eula.Accepted.Activation.Date": {
+            "operationConfig": {
+                "name": "wssDateToDate"
+            },
+            "params": {
+                "name": "EulaDt",
+                "path": "HKLM\\Software\\McAfee\\OemInfo\\Activation\\OneClick\\QueryParams"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "product_wss_eula_accepted_activation_date": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": "WSS.Eula.Accepted.Activation.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Expiry.Date": {
+            "operationConfig": {
+                "name": "wssDateToDate"
+            },
+            "params": {
+                "name": "settings",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Expiry.Date.Epoch": {
+            "operationConfig": {
+                "name": "dateToEpoch"
+            },
+            "params": "WSS.Expiry.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "product_wss_subscription_expiry_date": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": "WSS.Expiry.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Extended.Expiry.Date": {
+            "operationConfig": {
+                "name": "wssDateToDate"
+            },
+            "params": {
+                "name": "extended_expiry_dt",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Extended.Expiry.Date.Epoch": {
+            "operationConfig": {
+                "name": "dateToEpoch"
+            },
+            "params": "WSS.Extended.Expiry.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Extended.Expiry.Date.ISO": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": "WSS.Extended.Expiry.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Flags": {
+            "params": {
+                "name": "flags",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.Flags.Eula.Set": {
+            "operationConfig": {
+                "name": "mask",
+                "params": 1
+            },
+            "params": "WSS.Flags",
+            "source": "dataCollector"
+        },
+        "product_wss_subscription_flex_package_id": {
+            "params": {
+                "name": "flex_pkg_id",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Hardware.ID": {
+            "params": {
+                "name": "WSS_HardwareId",
+                "path": "HKLM\\SOFTWARE\\McAfee\\McClientAnalytics"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.InProductTransaction": {
+            "params": {
+                "name": "enable",
+                "path": "HKLM\\Software\\McAfee\\MSC\\Settings\\InProductTransaction"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Install.Date": {
+            "operationConfig": {
+                "name": "wssDateToDate"
+            },
+            "params": {
+                "name": "installed",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Install.Date.Epoch": {
+            "operationConfig": {
+                "name": "dateToEpoch"
+            },
+            "params": "WSS.Install.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "product_wss_install_date": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": "WSS.Install.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Installed.Days": {
+            "operationConfig": {
+                "name": "timeSince",
+                "params": "days"
+            },
+            "params": "WSS.Install.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Reboot.Pending": {
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "operationConfig": {
+                "name": "notNull"
+            },
+            "params": {
+                "directory": "{82A5EA35-D9CD-47C5-9629-E15D2F714E6E}",
+                "file": "$McRebootA5E6DEAA56$.lnk"
+            },
+            "source": "fileVersionEx"
+        },
+        "product_wss_subscription_trial": {
+            "params": {
+                "name": "trial",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.MPF.Version": {
+            "params": {
+                "name": "build",
+                "path": "HKLM\\Software\\McAfee\\MPF\\AppInfo\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.MPS.Version": {
+            "params": {
+                "name": "build",
+                "path": "HKLM\\Software\\McAfee\\MPS\\AppInfo\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.MQS.Version": {
+            "params": {
+                "name": "build",
+                "path": "HKLM\\Software\\McAfee\\MQS\\AppInfo\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.MSAD.UUID": {
+            "params": { 
+                "action": "findbestpath",
+                "data": [
+                    {
+                        "name": "UUID",
+                        "path": "HKLM\\Software\\McAfee\\WebAdvisor"
+                    },
+                    {
+                        "name": "UUID",
+                        "path": "HKLM\\Software\\McAfee\\SiteAdvisor"
+                    }
+                ]
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registryCustom"
+        },
+        "WSS.MSAD.Version": {
+            "params": {
+                "action": "findbestpath",
+                "data": [
+                    {
+                        "name": "FullVersion",
+                        "path": "HKLM\\Software\\McAfee\\WebAdvisor"
+                    },
+                    {
+                        "name": "FullVersion",
+                        "path": "HKLM\\Software\\McAfee\\SiteAdvisor"
+                    }
+                ]
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registryCustom"
+        },
+        "WSS.MSC.Version": {
+            "params": {
+                "name": "build",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.MSK.Version": {
+            "params": {
+                "name": "build",
+                "path": "HKLM\\Software\\McAfee\\MSK\\AppInfo\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.MSK.Content.Version": {
+            "params": {
+                "name": "content",
+                "path": "HKLM\\Software\\McAfee\\MSK"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            },
+            "source": "registry"
+        },
+        "WSS.ModCore.Version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\McAfee\\ModCore"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.NGM.Version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\McAfee\\NGM"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_subscription_package_id": {
+            "params": {
+                "name": "package_id",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Package.Name": {
+            "params": {
+                "name": "package_name",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Product.Market.Release.Name": {
+            "params": {
+                "name": "MarketReleaseName",
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Product.Key": {
+            "params": {
+                "name": "product_key",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.ProgramData.McAfee.Creation.Date.ISO": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": {
+                "directory": "McAfee",
+                "folderId": "$(FOLDERID_ProgramData)"
+            },
+            "source": "creationDate"
+        },
+        "product_wss_release_internal_name": {
+            "params": {
+                "name": "rcode",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Segment.ID": {
+            "params": {
+                "name": "EESegmentID",
+                "path": "HKLM\\Software\\McAfee\\MSC\\Settings\\Alerts\\SegmentDetails"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Segment.Type.Config.ID": {
+            "params": {
+                "action": "GetProperty",
+                "appid": "vso",
+                "name": "segmenttypeconfigid"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "subdb"
+        },
+        "WSS.Segment.Type.ID": {
+            "params": {
+                "name": "EESegmentTypeID",
+                "path": "HKLM\\Software\\McAfee\\MSC\\Settings\\Alerts\\SegmentDetails"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Software.ID": {
+            "params": {
+                "name": "WSS_SoftwareId",
+                "path": "HKLM\\SOFTWARE\\McAfee\\McClientAnalytics"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "product_wss_subscription_extendedexpiry_remaining_days": {
+            "operationConfig": {
+                "name": "daysTo"
+            },
+            "operationExpiry": 3600000,
+            "params": "WSS.Extended.Expiry.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "product_wss_subscription_expiry_remaining_days": {
+            "operationConfig": {
+                "name": "daysTo"
+            },
+            "params": "WSS.Expiry.Date",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Sustainability.Version": {
+            "params": {
+                "name": "Version",
+                "path": "HKLM\\Software\\McAfee\\Sustainability"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.User.Email": {
+            "params": {
+                "name": "e_mail",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache\\vso"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_subscription_registered": {
+            "operationConfig": {
+                "name": "notNull"
+            },
+            "params": "WSS.User.Email",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "source": "dataCollector"
+        },
+        "WSS.VSCore.Version": {
+            "operationConfig": {
+                "name": "first"
+            },
+            "params": [
+                "WSS.VSCore.Version.win32",
+                "WSS.VSCore.Version.x64"
+            ],
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.VSCore.Version.win32": {
+            "params": {
+                "name": "system_core_version",
+                "path": "HKLM\\Software\\McAfee\\SystemCore"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.VSCore.Version.x64": {
+            "params": {
+                "name": "system_core_version",
+                "path": "HKLM\\Software\\Wow6432Node\\McAfee\\SystemCore"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.VSO.Can.Run": {
+            "params": {
+                "action": "canIRun",
+                "appid": "vso"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "onMismatch": false,
+                "ruleName": "notNull"
+            },
+            "source": "subdb"
+        },
+        "WSS.VSO.Content.Version": {
+            "params": {
+                "name": "ContentVersion",
+                "path": "HKLM\\SOFTWARE\\McAfee\\VirusScan\\InstallSettings\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.VSO.Version": {
+            "params": {
+                "name": "build",
+                "path": "HKLM\\SOFTWARE\\McAfee\\VirusScan\\InstallSettings\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.VUL.Version": {
+            "params": {
+                "name": "build",
+                "path": "HKLM\\Software\\McAfee\\VUL\\AppInfo\\Substitute"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.WSC.Protection.Status": {
+            "params": {
+                "name": "WSCState",
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\Settings\\McProMgr"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_install_factory": {
+            "params": {
+                "name": "FUAllow",
+                "path": "HKLM\\Software\\McAfee\\MSC\\OEM"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "onMismatch": "0",
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "product_oem_oc_sku": {
+            "params": {
+                "name": "ocsku",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "firewall_blocked_33": {
+            "params": "firewall_blocked_33",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "fw_con_block_id_45": {
+            "params": "fw_con_block_id_45",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "fw_con_ver_id_6": {
+            "params": "fw_con_ver_id_6",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "msad.ads.blocked_63": {
+            "params": "msad.ads.blocked_63",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "msad.files.blocked_62": {
+            "params": "msad.files.blocked_62",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "msad.files.safe_65": {
+            "params": "msad.files.safe_65",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "msad.sites.blocked_61": {
+            "params": "msad.sites.blocked_61",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "msad.sites.safe_64": {
+            "params": "msad.sites.safe_64",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "qc_all_browser_id_15": {
+            "params": "qc_all_browser_id_15",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "qc_all_browser_id_16": {
+            "params": "qc_all_browser_id_16",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "qc_all_browser_id_17": {
+            "params": "qc_all_browser_id_17",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "qc_all_browser_id_18": {
+            "params": "qc_all_browser_id_18",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "qc_all_browser_id_19": {
+            "params": "qc_all_browser_id_19",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "qc_sys_file_id_20": {
+            "params": "qc_sys_file_id_20",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "qc_total_id_59": {
+            "params": "qc_total_id_59",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "shred_other_id_28": {
+            "params": "shred_other_id_28",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "shred_recycle_bin_id_27": {
+            "params": "shred_recycle_bin_id_27",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "shred_total_id_60": {
+            "params": "shred_total_id_60",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "vso_fixed_id_3": {
+            "params": "vso_fixed_id_3",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "vso_scan_id_2": {
+            "params": "vso_scan_id_2",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "vso_total_id_5": {
+            "params": "vso_total_id_5",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "vul_app_check_id_10": {
+            "params": "vul_app_check_id_10",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "vul_prg_upd_id_11": {
+            "params": "vul_prg_upd_id_11",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "vul_total_id_58": {
+            "params": "vul_total_id_58",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "vul_win_upd_id_12": {
+            "params": "vul_win_upd_id_12",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "dataAggregator"
+        },
+        "Device.CPU.Model.Description": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_Processor",
+                "column": "Name",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            },
+            "source": "wmi"
+        },
+        "Device.Disk.Primary.Size.Total": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_LogicalDisk",
+                "column": "Size",
+                "preprocessorName": "noop"
+            },
+            "operationConfig": {
+                "name": "divide",
+                "params": 1000000000
+            },
+            "source": "wmi"
+        },
+        "Device.Disk.Primary.Size.Total.GB": {
+            "operationConfig": {
+                "name": "round",
+                "params": {
+                    "multiple": 1
+                }
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "params": "Device.Disk.Primary.Size.Total",
+            "source": "dataCollector"
+        },
+        "Device.Disk.Primary.Size.Available": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_LogicalDisk",
+                "column": "freeSpace",
+                "preprocessorName": "noop"
+            },
+            "operationConfig": {
+                "name": "divide",
+                "params": 1000000000
+            },
+            "source": "wmi"
+        },
+        "Device.Disk.Primary.Size.Available.GB": {
+            "source": "dataCollector",
+            "params": "Device.Disk.Primary.Size.Available",
+            "operationConfig": {
+                "name": "round",
+                "params": {
+                    "multiple": 1
+                }
+            },
+            "rule": {
+                "ruleName": "notNull"
+            }
+        },
+        "Device.Disk.Primary.Type": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_DiskDrive",
+                "column": "MediaType",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Disk.Count": {
+            "params": {
+                "aggregatorName": "count",
+                "className": "Win32_DiskDrive",
+                "column": "DeviceID",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Manufacturer.Name": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_ComputerSystem",
+                "column": "Manufacturer",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Manufacturer.Model": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_ComputerSystem",
+                "column": "Model",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Manufacturer.ID": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_ComputerSystemProduct",
+                "column": "IdentifyingNumber",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Time.Zone": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_TimeZone",
+                "column": "StandardName",
+                "preprocessorName": "noop"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.OS.InstallDate": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_OperatingSystem",
+                "column": "InstallDate",
+                "preprocessorName": "noop"
+            },
+            "operationConfig": {
+                "name": "stringToISODate"
+            },
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            },
+            "source": "wmi"
+        },
+        "device_os_locale": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_OperatingSystem",
+                "column": "Locale",
+                "preprocessorName": "noop"
+            },
+            "operationConfig": {
+                "name": "cleanLocaleCode"
+            },
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            },
+            "source": "wmi"
+        },
+        "device_os_uwp_sideload_enabled": {
+            "params": {
+                "name": "AllowAllTrustedApps",
+                "path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock"
+            },
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            },
+            "source": "registry"
+        },
+        "Device.Type": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_ComputerSystem",
+                "column": "Pcsystemtype",
+                "preprocessorName": "noop"
+            },
+            "operationConfig": {
+                "name": "containsIn",
+                "params": [
+                    "Unspecified",
+                    "Desktop",
+                    "Mobile",
+                    "Workstation",
+                    "Enterprise Server",
+                    "SOHO Server",
+                    "Appliance PC",
+                    "Performance Server"
+                ]
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "wmi"
+        },
+        "Device.Disk.Primary.Encrypted": {
+            "operationConfig": {
+                "name": "containsIn",
+                "params": [
+                    false,
+                    true,
+                    null
+                ]
+            },
+            "params": {
+                "action": "disk_encryption",
+                "data": {}
+            },
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            },
+            "source": "wmiCustom"
+        },
+        "WSS.Platform.Systray.Icon.Status": {
+            "params": {
+                "name": "SystrayIconStatus",
+                "path": "HKLM\\SOFTWARE\\McAfee\\Platform"
+            },
+            "rule": {
+                "ruleName": "notNull",
+                "optional": true
+            },
+            "source": "registry"
+        },
+        "product_wss_eula_state": {
+            "params": {
+                "name": "Eulastate",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Registration.Status": {
+            "params": {
+                "name": "IPRDone",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Registration.Date": {
+            "operationConfig": {
+                "name": "dateToISO"
+            },
+            "params": "WSS.Registration.Date.Raw",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "dataCollector"
+        },
+        "WSS.Registration.Date.Raw": {
+            "operationConfig": {
+                "name": "wssDateToDate"
+            },
+            "params": {
+                "name": "IPRDt",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Jeula.Status": {
+            "params": {
+                "name": "jeula",
+                "path": "HKLM\\SOFTWARE\\McAfee\\Oeminfo"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.User.Consent.Status": {
+            "params": {
+                "name": "ucxml",
+                "path": "HKLM\\SOFTWARE\\McAfee\\Oeminfo"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Entitlement.Status": {
+            "params": {
+                "name": "entitlementcomplete",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Orion.Activation.Screen.Version": {
+            "params": {
+                "name": "wuiv",
+                "path": "HKLM\\Software\\McAfee\\MSC\\AppInfo\\Substitute\\QueryParams"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "WSS.Subdb.Applist": {
+            "params": {
+                "action": "iterateapplist",
+                "name": "installed",
+                "applist": [
+                    "mat",
+                    "mpf",
+                    "mps",
+                    "mqs",
+                    "msk",
+                    "vso",
+                    "vul",
+                    "pcb"
+                ],
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC\\SubManager\\Cache"
+            },
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "registryCustom"
+        },
+        "Device.Reseller.ID": {
+            "params": {
+                "name": "resellerid",
+                "path": "HKLM\\Software\\McAfee\\OemInfo\\Substitute"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "product_wss_oem_oobe_complete": {
+            "params": {
+                "name": "OOBEDone",
+                "path": "HKLM\\Software\\McAfee\\MSC\\Oem"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "product_mss_install_date": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": [
+                    "InstalledDate",
+                    "InstalledMonth",
+                    "InstalledYear"
+                ]
+            },
+            "operationConfig": {
+                "name": "combineCustomDate",
+                "params": [
+                    "InstalledDate",
+                    "InstalledMonth",
+                    "InstalledYear"
+                ]
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_mss_uuid": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": "ProductUUID"
+            },
+            "operationConfig": {
+                "name": "at",
+                "params": "ProductUUID"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_mss_affiliate_id": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": "affid"
+            },
+            "operationConfig": {
+                "name": "at",
+                "params": "affid"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_mss_abtest_id": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": "abtpkgid"
+            },
+            "operationConfig": {
+                "name": "at",
+                "params": "abtpkgid"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_mss_scan_scheduled_frequency": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": "ScanTask_Interval"
+            },
+            "operationConfig": {
+                "name": "at",
+                "params": "ScanTask_Interval"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_mss_dotnet_migration_id": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": "IsMigrated"
+            },
+            "operationConfig": {
+                "name": "at",
+                "params": "IsMigrated"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_mss_scan_custom_frequency": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": "UserScanTask_Interval"
+            },
+            "operationConfig": {
+                "name": "at",
+                "params": "UserScanTask_Interval"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_mss_culture_id": {
+            "params": {
+                "path": "$(FOLDERID_ProgramData)\\McAfee Security Scan",
+                "filename": "ftstate.ini",
+                "key": "RequestedLanguage"
+            },
+            "operationConfig": {
+                "name": "at",
+                "params": "RequestedLanguage"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "iniFile"
+        },
+        "product_wss_msc_activation_time": {
+            "params": {
+                "name": "ActivateTime",
+                "path": "HKLM\\SOFTWARE\\McAfee\\MSC"
+            },
+            "operationConfig": {
+                "name": "epochToISODate"
+            },
+            "rule": {
+                "optional": true,
+                "ruleName": "notNull"
+            },
+            "source": "registry"
+        },
+        "product_analytics_automation_logs_enabled": {
+            "params": {
+                "name": "enableLegacyAutomationLogs",
+                "obfuscated": true,
+                "path": "HKLM\\SOFTWARE\\McAfee\\McClientAnalytics"
+            },
+            "operationConfig": {
+                "name": "equal",
+                "params": "1"
+            },
+            "rule": {
+                "ruleName": null
+            },
+            "source": "registry"
+        },
+        "product_analytics_integration_type": {
+            "params": "Analytics.Integration.Type",
+            "source": "aleSetting"
+        },
+        "product_analytics_integration_type_static": {
+            "params": "product_analytics_integration_type",
+            "source": "dataCollector",
+            "operationConfig": {
+                "name": "equal",
+                "params": "static"
+            }
+        },
+        "device_videocontroller_name": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "Name",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_caption": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "Caption",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_description": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "Description",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_videoprocessor": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "VideoProcessor",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_deviceid": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "DeviceID",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_adapterdactype": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "AdapterDACType",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_adapterram": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "AdapterRAM",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_driverversion": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "DriverVersion",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_maxrefreshrate": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "MaxRefreshRate",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_minrefreshrate": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "MinRefreshRate",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "device_videocontroller_currentrefreshrate": {
+            "params": {
+                "aggregatorName": "useFirst",
+                "className": "Win32_VideoController",
+                "column": "CurrentRefreshRate",
+                "preprocessorName": "noop"
+            },
+            "source": "wmi"
+        },
+        "Lenovo_vantage_plugin_version_x64": {
+            "rule": {
+                "ruleName": null
+            },
+            "params": "$(FOLDERID_ProgramData)\\Lenovo\\ImController\\Plugins\\LenovoCompanionAppPlugin\\x64\\LenovoCompanionAppPlugin.dll",
+            "source": "fileVersion"
+        },
+        "Lenovo_vantage_plugin_version_x86": {
+            "rule": {
+                "ruleName": null
+            },
+            "params": "$(FOLDERID_ProgramData)\\Lenovo\\ImController\\Plugins\\LenovoCompanionAppPlugin\\x86\\LenovoCompanionAppPlugin.dll",
+            "source": "fileVersion"
+        },
+        "product_wss_lenovo_vantage_plugin_version": {
+            "rule": {
+                "ruleName": null
+            },
+            "params": [
+                "Lenovo_vantage_plugin_version_x64",
+                "Lenovo_vantage_plugin_version_x86"
+            ],
+            "operationConfig": {
+                "name": "first"
+            },
+            "source": "dataCollector"
+        },
+        "product_wss_entitlement_status_entitled": {
+            "params": "WSS.Entitlement.Status",
+            "source": "dataCollector",
+            "operationConfig": {
+                "name": "equal",
+                "params": "1"
+            }
+        },
+        "analytics_data_items_version": {
+            "params": "data_items",
+            "source": "configVersionHarvester",
+            "rule": {
+                "ruleName": "notNull"
+            }
+        },
+        "analytics_datasets_catalog_version": {
+            "params": "datasets_catalog",
+            "source": "configVersionHarvester",
+            "rule": {
+                "ruleName": "notNull"
+            }
+        },
+        "analytics_da_definitions_version": {
+            "params": "da_definitions",
+            "source": "configVersionHarvester",
+            "rule": {
+                "ruleName": "notNull"
+            }
+        },
+        "analytics_dictionary_version": {
+            "params": "dictionary",
+            "source": "configVersionHarvester",
+            "rule": {
+                "ruleName": "notNull"
+            }
+        },
+        "analytics_events_version": {
+            "params": "events",
+            "source": "configVersionHarvester",
+            "rule": {
+                "ruleName": "notNull"
+            }
+        },  
+        "analytics_profile_version": {
+            "params": "profile",
+            "source": "configVersionHarvester",
+            "rule": {
+                "ruleName": "notNull"
+            }
+        },        
+        "uwp_affiliate_id": {
+            "params": "uwp_affiliate_id",
+            "rule": {
+                "ruleName": null
+            },
+            "source": "UWPStorage"
+        },
+        "uwp_install_date": {
+            "params": "uwp_install_date",
+            "rule": {
+                "ruleName": null
+            },
+            "source": "UWPStorage"
+        },
+        "uwp_provider_id": {
+            "params": "uwp_provider_id",
+            "rule": {
+                "ruleName": null
+            },
+            "source": "UWPStorage"
+        },
+        "uwp_device_id": {
+            "params": "uwp_device_id",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "UWPStorage"
+        },
+        "device_vpn_names": {           
+            "params": {
+                "action": "vpn_names_list",
+                "data": {}
+            },
+            "source": "wmiCustom"
+        },
+        "device_vpn_names_enabled": {
+            "params": {
+                "action": "vpn_name_enabled_list",
+                "data": {}
+            },
+            "source": "wmiCustom"
+        },
+        "product_wss_vpn_integration": {
+            "params": {
+                "name": "LaunchCmd",
+                "path": "HKLM\\Software\\McAfee\\CoreUI\\Features\\MSCNT\\InstallLocation"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_vpn_deep_integration": {
+            "params": {
+                "name": "deep_integration",
+                "path": "HKLM\\Software\\McAfee\\CoreUI\\Features\\MSCNT\\InstallLocation"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_vpn_version": {
+            "params": {
+                "name": "Build",
+                "path": "HKLM\\Software\\McAfee\\WSSVPN"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_safe_connect_version": {
+            "params": {
+                "action": "findbestpath",
+                "data": [
+                    {
+                        "name": "Version",
+                        "path": "HKLM\\Software\\McAfee\\SafeConnect"
+                    },
+                    {
+                        "name": "Version",
+                        "path": "HKLM\\Software\\WOW6432Node\\McAfee\\SafeConnect"
+                    }
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_mgs_context": {
+            "params": {
+                "name": "mgs"
+            },
+            "rule": null,
+            "source": "mgsContextClient"
+        },
+        "mgs_profile_version": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_profile_version"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_activepolicy_ABE": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_activepolicy.ABE"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_activepolicy_NAV": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_activepolicy.NAV"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_activepolicy_NBE": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_activepolicy.NBE"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_activepolicy_Orchestrator": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_activepolicy_Orchestrator"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_activepolicy_SUE": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_activepolicy.SUE"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_activepolicy_alert_manager": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_activepolicy_alert_manager"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_product_version": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_product_version"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_build_number": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_build_number"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_machine_id": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_machine_id"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_nav_setting_wsc_state": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_nav_setting_wsc_state"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_nav_setting_rts_state": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_nav_setting_rts_state"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_sub_status": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_sub_status"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_sub_reason": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_sub_reason"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_account_id": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_account_id"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_affiliate_id":{
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_affiliate_id"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_subscription_expiry_date": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_subscription_expiry_date"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_subscription_trial": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_subscription_trial"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "mgs_device_provision_id": {
+            "operationConfig": {
+                "name": "getKeyFromJson",
+                "params": {
+                    "key": "mgs_device_provision_id"
+                }
+            },
+            "params": "product_mgs_context",
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "device_context_intest":{
+            "params": [
+                "device_videocontroller_name",
+                "device_videocontroller_caption",
+                "device_videocontroller_description",
+                "device_videocontroller_videoprocessor",
+                "device_videocontroller_deviceid",
+                "device_videocontroller_adapterdactype",
+                "device_videocontroller_adapterram",
+                "device_videocontroller_driverversion",
+                "device_videocontroller_maxrefreshrate",
+                "device_videocontroller_minrefreshrate",
+                "device_videocontroller_currentrefreshrate",
+                "device_os_uwp_sideload_enabled",
+                "device_vpn_names_enabled",
+                "device_vpn_names"
+            ],
+            "rule": null,
+            "source": "dataCollectorHarvestAll"
+        },
+        "analytics.sdk.version":{
+            "params": "getSDKVersionFromBuildSystem",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "engineContext"
+        },
+        "Application.Name":{
+            "params": "getApplicationName",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "engineContext"
+        },
+        "Hit.UserID":{
+            "params": "getContextId",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "refresh": {
+                "harvestIfEq": "[na]"
+            },
+            "source": "engineContext"
+        },
+        "Analytics.Content.Version":{
+            "params": "getContentVersion",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "engineContext"
+        },
+        "Analytics.bootstrapFileVersion":{
+            "params": "getBootstrapFileVersion",
+            "rule": {
+                "ruleName": "notNull"
+            },
+            "source": "engineContext"
+        },
+        "device.geo.id": {
+            "params": {
+                "key":"ID"
+            },
+            "rule": null,
+            "source": "getGeodata"
+        },
+        "device.env.qa": {
+            "params": {
+                "key":"QA"
+            },
+            "rule": null,
+            "source": "getGeodata"
+        },
+        "product_wss_vso_lam_fileless_enabled_option1": {
+            "params": {
+                "name": "fileless_enabled",
+                "path": "HKLM\\SOFTWARE\\McAfee\\VirusScan\\Overrides\\System\\Settings\\LAM"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_vso_lam_fileless_enabled_option2": {
+            "params": {
+                "name": "fileless_enabled",
+                "path": "HKLM\\SOFTWARE\\McAfee\\VirusScan\\Settings\\LAM"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_vso_lam_fileless_enabled": {
+            "operationConfig": {
+                "name": "first"
+            },
+            "params": [
+                "product_wss_vso_lam_fileless_enabled_option1",
+                "product_wss_vso_lam_fileless_enabled_option2"
+            ],
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "dataCollector"
+        },
+        "device_system_hypervisorenforcedcodeintegrity_enabled": {
+            "params": {
+                "name": "Enabled",
+                "path": "HKLM\\System\\CurrentControlSet\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity"
+            },
+            "refresh": null,
+            "rule": {
+                "meta": [
+                    0,
+                    1
+                ],
+                "ruleName": "in"
+            },
+            "source": "registry"
+        },
+        "product_wss_coreui_entitled_apps": {
+            "params": {
+                "name": "EntitledApps",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_coreui_visible_apps": {
+            "params": {
+                "name": "VisibleApps",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_coreui_installed_apps": {
+            "params": {
+                "name": "InstalledApps",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_coreui_enabled_apps": {
+            "params": {
+                "name": "EnabledApps",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_coreui_disabled_apps": {
+            "params": {
+                "name": "DisabledApps",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_coreui_setup_apps": {
+            "params": {
+                "name": "SetupApps",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "WSS.IsTrial": {
+            "params": "product_wss_subscription_trial",
+            "source": "dataCollector"
+        },
+        "WSS.Package.ID": {
+            "params": "product_wss_subscription_package_id",
+            "source": "dataCollector"
+        },
+        "WSS.User.Registered": {
+            "params": "product_wss_subscription_registered",
+            "source": "dataCollector"
+        },
+        "WSS.Flex.Package.ID": {
+            "params": "product_wss_subscription_flex_package_id",
+            "source": "dataCollector"
+        },
+        "WSS.Expiry.Date.ISO": {
+            "params": "product_wss_subscription_expiry_date",
+            "source": "dataCollector"
+        },
+        "WSS.CoreUI.Build.Version": {
+            "params": "product_wss_coreui_version",
+            "source": "dataCollector"
+        },
+        "product_wss_coreui_ux_id": {
+            "params": {
+                "name": "coreui_launched",
+                "path": "HKLM\\Software\\McAfee\\CoreUI"
+            },
+            "rule": null,
+            "refresh": {
+                "harvestTimeout": 60000,
+                "onMessageBusMsg": [
+                    "CoreUI.MainPage.Treatment"
+                ]
+            },
+            "source": "registry"
+        },
+        "product_wss_packages_additional_features": {
+            "params": {
+                "name": "additionalfeatures",
+                "path": "HKLM\\Software\\McAfee\\MSC\\Packages\\431"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_softwaretag": {
+            "params": {
+                "name": "softwaretag",
+                "path": "HKLM\\Software\\McAfee\\PEF\\OEM"
+            },
+            "refresh": {
+                "onMessageBusMsg": [
+                    "Core.Subscription.Sync",
+                    "Core.Subscription.SubscriptionUpdated"
+                ]
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "product_wss_pdmgr_polaris_enabled": {
+            "params": "polaris_enabled",
+            "refresh": {
+                "onMessageBusMsg": [
+                    "PDMgr.PDString.Refresh"
+                ]
+            },
+            "source": "pdManager"
+        },
+        "product_wss_csp_id": {
+            "params": {
+                "name": "clid",
+                "path": "HKLM\\SOFTWARE\\McAfee\\CSP\\Store"
+            },
+            "rule": null,
+            "source": "registry"
+        },
+        "device_retail_mode_status": {
+            "params": {
+                "name": "SystemMonitor.Get.RetailMode.Status",
+                "data": "",
+                "outputType":"name"
+            },
+            "refresh": null,
+            "operationConfig": {
+                "name": "transformWithDefault",
+                "params": {
+                    "SystemMonitor.RetailMode.Enabled": "enabled",
+                    "SystemMonitor.RetailMode.Disabled": "disabled",
+                    "default": "[unexpected]"
+                }
+            },
+            "rule": null,
+            "source": "msgBusSource"
+        },
+        "product_targeted_affiliate_id": {
+            "params": {
+                "name": "affid",
+                "path": "HKLM\\Software\\McAfee\\PEF\\OEM"
+            },
+            "rule": null,
+            "source": "registry"
+        }
+    }
+}
+

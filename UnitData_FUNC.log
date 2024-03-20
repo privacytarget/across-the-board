@@ -1,0 +1,697 @@
+call "c:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "BLOB_INFO,PO_INFO,UBER_INFO,DISK_INFO,UUT_INFO,UEFIVAR_INFO" "PASS1_Fixups" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [10:29:31.17] Beginning of the UnitData_ROUNTER.CMD args: "BLOB_INFO,PO_INFO,UBER_INFO,DISK_INFO,UUT_INFO,UEFIVAR_INFO" "PASS1_Fixups"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[942]
+uiaMsg=[error happened fixups - pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  26,795,053,056 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect Component Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\CompoInfo.exe"  -passName="InfoBomBlk" -uiaCode="942" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Collect PO Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\Bigdata_SWPO.exe"  -passName="PASS1_Fixups" -uiaCode="942" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -swpo="C:\system.sav\HE23M01-HSCPTABA"
+errorlevel=0
+==== Collect UBER Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\Bigdata_UBERINI.exe"  -passName="PASS1_Fixups" -uiaCode="942" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Collect Storage Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DiskInfo.exe"  -passName="PASS1_Fixups" -uiaCode="942" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+In WmiQuery_Disk
+after CoInitializeEx
+after CoInitializeSecurity
+after CoCreateInstance
+after ConnectServer
+after CoSetProxyBlanket
+after ExecQuery
+In while 1
+In while  1.5
+In while 2
+Clear vtPropName
+Clear vtPropModel
+Clear vtPropBusType
+Clear vtPropLocation
+Clear vtPropSize
+Clear vtPropPartNum
+Clear vtPropStyle
+Clear vtPropStatus
+In while 1
+errorlevel=0
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS1_Fixups" -uiaCode="942" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump UEFI Variables ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_dumpUEFIVariable.exe"  -passName="PASS1_Fixups" -uiaCode="942" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "c:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "UUT_INFO,DEV_INFO,APPX_INFO,FEATURE_INFO" "PASS1_CleanupEue" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:25:04.25] Beginning of the UnitData_ROUNTER.CMD args: "UUT_INFO,DEV_INFO,APPX_INFO,FEATURE_INFO" "PASS1_CleanupEue"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[946]
+uiaMsg=[Error happened at OSUpdate/Install - PASS1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  24,679,555,072 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS1_CleanupEue" -uiaCode="946" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump Device Manager ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS1_CleanupEue" -uiaCode="946" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" device
+PCI-to-PCI Bridge
+Motherboard resources
+Motherboard resources
+Microphone (2- High Definition Audio Device)
+Microsoft ACPI-Compliant Embedded Controller
+Microsoft ACPI-Compliant Control Method Battery
+System CMOS/real time clock
+Root Print Queue
+PCI-to-PCI Bridge
+Volume Manager
+Unknown device
+Trusted Platform Module 2.0
+Unknown device
+Microsoft Basic Display Driver
+Unknown device
+Microsoft Input Configuration Device
+SD Storage Class Controller
+High Definition Audio Device
+ACPI Thermal Zone
+Volume
+I2C HID Device
+Realtek PCIe GbE Family Controller
+PCI standard ISA bridge
+Microsoft Windows Management Interface for ACPI
+Base System Device
+Volume
+Microsoft Hyper-V Virtualization Infrastructure Driver
+High precision event timer
+High Definition Audio Controller
+Composite Bus Enumerator
+Microsoft Virtual Drive Enumerator
+SM Bus Controller
+Camera DFU Device
+Microsoft AC Adapter
+Microsoft Storage Spaces Controller
+Intel SD Host Controller
+Microsoft Kernel Debug Network Adapter
+HP TrueVision HD Camera
+Microsoft Basic Display Adapter
+PCI-to-PCI Bridge
+System Firmware
+Volume
+System timer
+Volume
+ACPI Lid
+UMBus Root Bus Enumerator
+Charge Arbitration Driver
+Intel(R) Serial IO I2C Host Controller - 31B4
+Microsoft Radio Device Enumeration Bus
+ACPI x64-based PC
+Speakers (2- High Definition Audio Device)
+PCI Express Root Complex
+HID-compliant mouse
+Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)
+ACPI Power Button
+Microsoft ACPI-Compliant System
+Unknown device
+Microsoft Basic Render Driver
+PCI standard host CPU bridge
+Microsoft UEFI-Compliant System
+ACPI Fixed Feature Button
+PCI-to-PCI Bridge
+Intel(R) Serial IO I2C Host Controller - 31BA
+Intel(R) Power Engine Plug-in
+PCI-to-PCI Bridge
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+Integrated Monitor
+HID-compliant vendor-defined device
+Microsoft GS Wavetable Synth
+USB Composite Device
+PCI Data Acquisition and Signal Processing Controller
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+NDIS Virtual Network Adapter Enumerator
+HP HP Laptop 14-cf2xxx
+Programmable interrupt controller
+Hynix hC8aP>
+High Definition Audio Device
+USB Root Hub (USB 3.0)
+Microsoft System Management BIOS Driver
+PCI Simple Communications Controller
+Plug and Play Software Device Enumerator
+HID-compliant touch pad
+Remote Desktop Device Redirector Bus
+Standard PS/2 Keyboard
+errorlevel=0
+==== Collect APPX Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS1_CleanupEue" -uiaCode="946" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" appx online
+errorlevel=0
+==== Collect Feature Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS1_CleanupEue" -uiaCode="946" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" feature online
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "c:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "DISK_INFO,UUT_INFO,BCU_INFO,UEFIVAR_INFO" "PASS1_PeEnd_2ndCapEueBto" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:29:20.04] Beginning of the UnitData_ROUNTER.CMD args: "DISK_INFO,UUT_INFO,BCU_INFO,UEFIVAR_INFO" "PASS1_PeEnd_2ndCapEueBto"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[948]
+uiaMsg=[error happened at capturing index3 - pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  27,169,787,904 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect Storage Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DiskInfo.exe"  -passName="PASS1_PeEnd_2ndCapEueBto" -uiaCode="948" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+In WmiQuery_Disk
+after CoInitializeEx
+after CoInitializeSecurity
+after CoCreateInstance
+after ConnectServer
+after CoSetProxyBlanket
+after ExecQuery
+In while 1
+In while  1.5
+In while 2
+Clear vtPropName
+Clear vtPropModel
+Clear vtPropBusType
+Clear vtPropLocation
+Clear vtPropSize
+Clear vtPropPartNum
+Clear vtPropStyle
+Clear vtPropStatus
+In while 1
+errorlevel=0
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS1_PeEnd_2ndCapEueBto" -uiaCode="948" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump BCU variable ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BcuInfo_x64.exe"  -passName="PASS1_PeEnd_2ndCapEueBto" -uiaCode="948" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+==== Dump UEFI Variables ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_dumpUEFIVariable.exe"  -passName="PASS1_PeEnd_2ndCapEueBto" -uiaCode="948" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "c:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "DEV_INFO,PO_INFO,DISK_INFO,UUT_INFO,UEFIVAR_INFO" "PASS2_Fixups" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:17:18.32] Beginning of the UnitData_ROUNTER.CMD args: "DEV_INFO,PO_INFO,DISK_INFO,UUT_INFO,UEFIVAR_INFO" "PASS2_Fixups"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[951]
+uiaMsg=[PASS2_FIXUPS]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  30,158,274,560 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Dump Device Manager ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS2_Fixups" -uiaCode="951" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" device
+Programmable interrupt controller
+Motherboard resources
+Motherboard resources
+PCI standard ISA bridge
+Base System Device
+Microsoft ACPI-Compliant Embedded Controller
+Audio Device on High Definition Audio Bus
+Microsoft ACPI-Compliant Control Method Battery
+Microsoft Input Configuration Device
+System CMOS/real time clock
+High Definition Audio Controller
+SM Bus Controller
+Volume Manager
+Unknown device
+Trusted Platform Module 2.0
+Unknown device
+Intel SD Host Controller
+Standard PS/2 Keyboard
+Microsoft Basic Display Driver
+Unknown device
+PCI-to-PCI Bridge
+Network Controller
+ACPI Thermal Zone
+Microsoft Windows Management Interface for ACPI
+HP TrueVision HD Camera
+High precision event timer
+Microsoft Virtual Drive Enumerator
+Intel(R) Serial IO I2C Host Controller - 31B4
+Microsoft AC Adapter
+Microsoft Storage Spaces Controller
+Kingston TX2964
+Microsoft Kernel Debug Network Adapter
+Audio Device on High Definition Audio Bus
+SD Storage Class Controller
+System Firmware
+Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)
+Volume
+PCI standard host CPU bridge
+Unknown device
+ACPI Lid
+RamDisk
+Volume
+UMBus Root Bus Enumerator
+HID-compliant mouse
+PCI-to-PCI Bridge
+Intel(R) Serial IO I2C Host Controller - 31BA
+Bluetooth Radio 
+ACPI x64-based PC
+PCI Express Root Complex
+PCI-to-PCI Bridge
+ACPI Power Button
+Microsoft ACPI-Compliant System
+Unknown device
+Microsoft Basic Render Driver
+System timer
+PCI Data Acquisition and Signal Processing Controller
+Microsoft UEFI-Compliant System
+ACPI Fixed Feature Button
+HID-compliant vendor-defined device
+Standard Power Management Controller
+USB Composite Device
+PCI Simple Communications Controller
+Video Controller (VGA Compatible)
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+USB Root Hub (USB 3.0)
+NDIS Virtual Network Adapter Enumerator
+I2C HID Device
+PCI-to-PCI Bridge
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+Generic Monitor
+HID-compliant touch pad
+Realtek(R) PCI(e) Ethernet Controller
+PCI-to-PCI Bridge
+Microsoft System Management BIOS Driver
+HP HP Laptop 14-cf2xxx
+Plug and Play Software Device Enumerator
+errorlevel=0
+==== Collect PO Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\Bigdata_SWPO.exe"  -passName="PASS2_Fixups" -uiaCode="951" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -swpo="C:\system.sav\PCIJ72AAB00Y"
+errorlevel=0
+==== Collect Storage Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DiskInfo.exe"  -passName="PASS2_Fixups" -uiaCode="951" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+In WmiQuery_Disk
+after CoInitializeEx
+after CoInitializeSecurity
+after CoCreateInstance
+after ConnectServer
+after CoSetProxyBlanket
+after ExecQuery
+In while 1
+In while  1.5
+In while 2
+Clear vtPropName
+Clear vtPropModel
+Clear vtPropBusType
+Clear vtPropLocation
+Clear vtPropSize
+Clear vtPropPartNum
+Clear vtPropStyle
+Clear vtPropStatus
+In while 1
+errorlevel=0
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS2_Fixups" -uiaCode="951" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump UEFI Variables ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_dumpUEFIVariable.exe"  -passName="PASS2_Fixups" -uiaCode="951" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "c:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TOUCHPOINT_INFO" "PASS2_BBV2Post" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:54:09.89] Beginning of the UnitData_ROUNTER.CMD args: "TOUCHPOINT_INFO" "PASS2_BBV2Post"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[956]
+uiaMsg=[PASS2_PostBBV]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  41,240,834,048 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect ShareData.ini Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS2_BBV2Post" -uiaCode="956" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="C:\HP\HPQWare\BTBHost\TouchpointStatus.ini" -section="StartMenu"
+errorlevel=0
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS2_BBV2Post" -uiaCode="956" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="C:\HP\HPQWare\BTBHost\TouchpointStatus.ini" -section="Taskbar"
+errorlevel=0
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="PASS2_BBV2Post" -uiaCode="956" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="C:\HP\HPQWare\BTBHost\TouchpointStatus.ini" -section="EdgeFav"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "c:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "UUT_INFO,APPX_INFO,FEATURE_INFO" "PASS2_BBVClean" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:55:03.06] Beginning of the UnitData_ROUNTER.CMD args: "UUT_INFO,APPX_INFO,FEATURE_INFO" "PASS2_BBVClean"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[957]
+uiaMsg=[Started_BBVClean_phase_in_PASS2]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  42,418,962,432 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS2_BBVClean" -uiaCode="957" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Collect APPX Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS2_BBVClean" -uiaCode="957" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" appx online
+errorlevel=0
+==== Collect Feature Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS2_BBVClean" -uiaCode="957" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" feature online
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "c:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "BLOB_UPDATE,DISK_INFO,UUT_INFO,BCU_INFO,UEFIVAR_INFO" "PASS2_2ndCapEue" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:12:22.43] Beginning of the UnitData_ROUNTER.CMD args: "BLOB_UPDATE,DISK_INFO,UUT_INFO,BCU_INFO,UEFIVAR_INFO" "PASS2_2ndCapEue"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[961]
+uiaMsg=[Started_2nd_Capture_phase_in_PASS2]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  41,861,718,016 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Update Component result ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DelivRpt.exe"  -passName="InfoBomBlk" -uiaCode="961" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+==== Collect Storage Information ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DiskInfo.exe"  -passName="PASS2_2ndCapEue" -uiaCode="961" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+In WmiQuery_Disk
+after CoInitializeEx
+after CoInitializeSecurity
+after CoCreateInstance
+after ConnectServer
+after CoSetProxyBlanket
+after ExecQuery
+In while 1
+In while  1.5
+In while 2
+Clear vtPropName
+Clear vtPropModel
+Clear vtPropBusType
+Clear vtPropLocation
+Clear vtPropSize
+Clear vtPropPartNum
+Clear vtPropStyle
+Clear vtPropStatus
+In while 1
+errorlevel=0
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="PASS2_2ndCapEue" -uiaCode="961" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump BCU variable ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BcuInfo_x64.exe"  -passName="PASS2_2ndCapEue" -uiaCode="961" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+==== Dump UEFI Variables ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_dumpUEFIVariable.exe"  -passName="PASS2_2ndCapEue" -uiaCode="961" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 

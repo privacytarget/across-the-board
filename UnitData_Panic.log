@@ -1,0 +1,183 @@
+8:06 AM 1/20/2024Arg1=[/1STGS] 
+MLGM 1st  GS capture process, not a CTOPANIC  
+Collect unit data for GM 1GS or HWD2 and update main to PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "BLOB_UPDATE,MAIN_UPDATE,BLOB_UPDATE,DEV_INFO,DISK_INFO,UUT_INFO,BCU_INFO,UEFIVAR_INFO,FUPDATE" "GMCapture" Result PASSED 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:29:39.01] Beginning of the UnitData_ROUNTER.CMD args: "BLOB_UPDATE,MAIN_UPDATE,BLOB_UPDATE,DEV_INFO,DISK_INFO,UUT_INFO,BCU_INFO,UEFIVAR_INFO,FUPDATE" "GMCapture" Result PASSED               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\Exclude\PINPROC\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[949]
+uiaMsg=[Error happened at DiskUT.bto PASS1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  27,149,918,208 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Update Component result ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DelivRpt.exe"  -passName="InfoBomBlk" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+==== Update Main Result to PASSED ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="GMCapture" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" updateattribute "/cps/main/p[contains(@name,'Result')]" value PASSED
+errorlevel=0
+==== Update Component result ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DelivRpt.exe"  -passName="InfoBomBlk" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+==== Dump Device Manager ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="GMCapture" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" device
+Programmable interrupt controller
+Motherboard resources
+Motherboard resources
+PCI standard ISA bridge
+Base System Device
+Microsoft ACPI-Compliant Embedded Controller
+Audio Device on High Definition Audio Bus
+Microsoft ACPI-Compliant Control Method Battery
+Microsoft Input Configuration Device
+System CMOS/real time clock
+High Definition Audio Controller
+SM Bus Controller
+Volume Manager
+Unknown device
+Trusted Platform Module 2.0
+Unknown device
+Intel SD Host Controller
+Video Controller (VGA Compatible)
+Standard PS/2 Keyboard
+Microsoft Basic Display Driver
+Unknown device
+PCI-to-PCI Bridge
+ACPI Thermal Zone
+Microsoft Windows Management Interface for ACPI
+High precision event timer
+Microsoft Virtual Drive Enumerator
+Intel(R) Serial IO I2C Host Controller - 31B4
+Camera DFU Device
+Hynix hC8aP>
+Microsoft AC Adapter
+Microsoft Storage Spaces Controller
+Microsoft Kernel Debug Network Adapter
+HP TrueVision HD Camera
+SD Storage Class Controller
+Audio Device on High Definition Audio Bus
+System Firmware
+Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)
+PCI standard host CPU bridge
+Unknown device
+ACPI Lid
+RamDisk
+UMBus Root Bus Enumerator
+HID-compliant mouse
+PCI-to-PCI Bridge
+Intel(R) Serial IO I2C Host Controller - 31BA
+ACPI x64-based PC
+PCI Express Root Complex
+PCI-to-PCI Bridge
+ACPI Power Button
+Microsoft ACPI-Compliant System
+Unknown device
+Microsoft Basic Render Driver
+System timer
+PCI Data Acquisition and Signal Processing Controller
+Microsoft UEFI-Compliant System
+ACPI Fixed Feature Button
+HID-compliant vendor-defined device
+Standard Power Management Controller
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+Intel(R) Pentium(R) Silver N5030 CPU @ 1.10GHz
+PCI Simple Communications Controller
+USB Composite Device
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+USB Root Hub (USB 3.0)
+NDIS Virtual Network Adapter Enumerator
+HP HP Laptop 14-cf2xxx
+I2C HID Device
+PCI-to-PCI Bridge
+Generic Monitor
+HID-compliant touch pad
+Realtek(R) PCI(e) Ethernet Controller
+PCI-to-PCI Bridge
+Microsoft System Management BIOS Driver
+Volume
+Plug and Play Software Device Enumerator
+Volume
+errorlevel=0
+==== Collect Storage Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DiskInfo.exe"  -passName="GMCapture" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+In WmiQuery_Disk
+after CoInitializeEx
+after CoInitializeSecurity
+after CoCreateInstance
+after ConnectServer
+after CoSetProxyBlanket
+after ExecQuery
+In while 1
+In while  1.5
+In while 2
+Clear vtPropName
+Clear vtPropModel
+Clear vtPropBusType
+Clear vtPropLocation
+Clear vtPropSize
+Clear vtPropPartNum
+Clear vtPropStyle
+Clear vtPropStatus
+In while 1
+errorlevel=0
+==== Collect UUT Status Information, such as CPU, memory, fan, thermal, battery ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_sysInfo.exe"  -passName="GMCapture" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump BCU variable ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BcuInfo_x64.exe"  -passName="GMCapture" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+==== Dump UEFI Variables ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_dumpUEFIVariable.exe"  -passName="GMCapture" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Collect info.bom Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\inifile.exe"  -passName="GMCapture" -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" -inifile="C:\System.sav\info.bom" -section="Factory Update"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 

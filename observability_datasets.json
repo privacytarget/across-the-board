@@ -1,0 +1,260 @@
+{
+    "version": "1.1.522",
+    "data":{
+        "Testing.Mock": {
+            "map": {
+                "Success" : "Received"
+            },
+            "default": {
+                "Test.Value" : "Yes"
+            }
+        },
+        "WSSAlertPlugin.L3.AlertSuppressed": {
+            "map": {
+                "AlertID": "Event.Label",
+                "isSuppressedByL3Policy": "Hit.Result"
+            },
+            "default": {
+                "hit_event_id": "WSSAlertPlugin.L3.AlertSuppressed",
+                "Event.Category": "Alerts",
+                "Event.Action": "L3 Alert was suppressed",
+                "Hit.Interactive": true,
+                "Hit.User.Initiated": true
+            }
+        },
+        "AntiSpam.Mails.ScannedInDay": {
+            "map": {
+                "Count": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.Mails.ScannedInDay",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Mails Scanned",
+                "Event.Label": "Mails Scanned",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "AntiSpam.Mails.SpamCntInDay": {
+            "map": {
+                "Count": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.Mails.SpamCntInDay",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Spam Mails",
+                "Event.Label": "Filtered Spam Mails",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "AntiSpam.Mails.AllowedBy2Big": {
+            "map": {
+                "Count": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.Mails.AllowedBy2Big",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "2Big",
+                "Event.Label": "Allowed Mails Too Big",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "AntiSpam.Mails.AllowedByFriend": {
+            "map": {
+                "Count": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.Mails.AllowedByFriend",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Friend",
+                "Event.Label": "Allowed Mails Friend",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "AntiSpam.Mails.BlockedByCustomFilter": {
+            "map": {
+                "Count": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.Mails.BlockedByCustomFilter",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "CustomFilter",
+                "Event.Label": "Blocked Mails on Custom Filter",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "AntiSpam.Mails.BlockedByHydraScore": {
+            "map": {
+                "Count": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.Mails.BlockedByHydraScore",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "HydraScore",
+                "Event.Label": "Blocked Mails on Hydra Score",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "AntiSpam.Mails.BlockedByNotAFriend": {
+            "map": {
+                "Count": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.Mails.BlockedByNotAFriend",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "NotAFriend",
+                "Event.Label": "Blocked Mails on NotAFriend",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "Core.AntiSpam.Settings": {
+            "map": {
+                "state": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.Settings",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Changed AntiSpam setting state",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "Core.AntiSpam.ProtectionLevel": {
+            "map": {
+                "level": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.ProtectionLevel",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Set Spam Protection Level",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "Core.AntiSpam.ProtectionLevelChanged": {
+            "map": {
+                "level": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.ProtectionLevel",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Change Protection Level",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": false
+            }
+        },
+        "Core.AntiSpam.AddFilteringRule": {
+            "map": {
+                "acounttype": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.AddFilteringRule",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Web-Mail accounts Added",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "Core.AntiSpam.FilteringRuleState": {
+            "map": {
+                "acounttype": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.FilteringRuleState",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Viewed Filtered Web Mails",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "AntiSpam.User.LastSpamMailSize": {
+            "map": {
+                "Size": "Event.Value"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.User.LastSpamMailSize",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Spam Mail Size",
+                "Event.Label": "Spam Mail Size",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "AntiSpam.User.MarkAsSpam": {
+            "map": {
+                "Source": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.User.MarkAsSpam",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Mark As Spam",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "AntiSpam.User.MarkAsHam": {
+            "map": {
+                "Source": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "AntiSpam.User.MarkAsHam",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Mark As Ham",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "Core.AntiSpam.AddRule": {
+            "map": {
+                "field": "Hit.Label.1",
+                "action": "Event.Label",
+                "phrase": "Hit.Label.2"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.AddRule",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Add Custom Filter rules",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "Core.AntiSpam.EmailProcessing": {
+            "map": {
+                "markedemail": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.EmailProcessing",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Leave Spam Mails in Inbox",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "Core.AntiSpam.Toolbar": {
+            "map": {
+                "toolbars": "Event.Label"
+            },
+            "default": {
+                "hit_event_id": "Core.AntiSpam.Toolbar",
+                "Event.Category": "Anti-Spam",
+                "Event.Action": "Disable Anti-Spam Tool Bar",
+                "Hit.Interactive": false,
+                "Hit.User.Initiated": true
+            }
+        },
+        "analytics_dataset_get": {
+        "map": {
+         },
+        "default": {
+            "hit_event_id": "analytics_send_splitio_product_attributes"
+        }
+        }
+    }
+}
+

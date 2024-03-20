@@ -1,0 +1,661 @@
+{
+  "version": "1.1.522",
+  "data": {
+    "profile_default_da": {
+      "transport": "da",
+      "ignoreAttributeRules": true,
+      "dictionary": "dictionary_default_ga",
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "forceLowerCaseKeys": false
+      }
+    },
+    "profile_default_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "sourceid": "WSS",
+        "eventType": "genappevent",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_ngm_log_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "eb8e0511-f15f-4b76-93c5-d7363ef0851d",
+        "sourceid": "WSS",
+        "eventType": "Log",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_realtime_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss"
+      ],
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "sourceid": "WSS",
+        "eventType": "wssrtevents",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_ngm_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "eb8e0511-f15f-4b76-93c5-d7363ef0851d",
+        "sourceid": "WSS",
+        "eventType": "genappevent",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_exception_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default"
+      ],
+      "transport_config": {
+        "appid": "1de17b42-bb72-43cd-8ba9-867d7cc203f3",
+        "sourceid": "WSS",
+        "eventType": "exception",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_da_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "da",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "df77019b-eb61-4417-b1a7-ad644a389fb4",
+        "sourceid": "WSS",
+        "eventType": "genappPrdActAggr",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_wss_coreui_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "df77019b-eb61-4417-b1a7-ad644a389fb4",
+        "sourceid": "WSS",
+        "eventType": "genappevent",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_wss_coreui_cohort_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "df77019b-eb61-4417-b1a7-ad644a389fb4",
+        "sourceid": "WSS",
+        "eventType": "genapp_appui",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_dy_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "sourceid": "WSS",
+        "eventType": "genapp_PrdAct",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_update_mgr_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "664e00c8-7dc7-4efb-a863-696c9b98c07b",
+        "sourceid": "WSS",
+        "eventType": "genappevent",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_mtm_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm",
+        "mtm"
+      ],
+      "ignoreAttributeRules": true,
+      "transport_config": {
+        "appid": "08929611-44ae-4d9a-8ea0-f18b0d23d66f",
+        "sourceid": "WSS",
+        "eventType": "genappevent",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_ngm_exception_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "transport_config": {
+        "appid": "eb8e0511-f15f-4b76-93c5-d7363ef0851d",
+        "sourceid": "WSS",
+        "eventType": "genapp_ngm_log",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_secevent_csp": {
+      "transport": "csp",
+      "dictionary": "dictionary_default_csp",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "csp"
+      ],
+      "transport_config": {
+        "appid": "7b3ed1a8-7907-436a-ac6c-640bfd5db80c",
+        "sourceid": "WSS",
+        "eventType": "genapp_secevent",
+        "channelId": "AnalyticsSDK"
+      }
+    },
+    "profile_default_sustainability": {
+      "transport": "msgbus",
+      "dictionary": null,
+      "datasets": [
+        "default"
+      ],
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "msgName": "sustainability.collect.logs",
+        "processorName": "simpleMsgComposer",
+        "processorConfig": {
+          "Problem": "$hit_event_id",
+          "Source": "Analytics"
+        }
+      }
+    },
+    "profile_default_sustainability_12p": {
+      "transport": "msgbus",
+      "dictionary": null,
+      "datasets": [
+        "default"
+      ],
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "msgName": "sustainability.collect.logs",
+        "processorName": "simpleMsgComposer",
+        "processorConfig": {
+          "Problem": "$hit_event_id",
+          "Source": "Analytics"
+        }
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-1]"
+        }
+      },
+      "throttleMultiplier": 8
+    },
+    "profile_default_sustainability_1p": {
+      "transport": "msgbus",
+      "dictionary": null,
+      "datasets": [
+        "default"
+      ],
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "msgName": "sustainability.collect.logs",
+        "processorName": "simpleMsgComposer",
+        "processorConfig": {
+          "Problem": "$hit_event_id",
+          "Source": "Analytics"
+        }
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-3]0"
+        }
+      },
+      "throttleMultiplier": 64
+    },
+    "profile_default_sustainability_ngm_investigation": {
+      "transport": "msgbus",
+      "dictionary": null,
+      "datasets": [
+        "default"
+      ],
+      "transport_config": {
+        "msgName": "sustainability.collect.logs",
+        "processorName": "simpleMsgComposer",
+        "processorConfig": {
+          "Problem": "$hit_event_id",
+          "Source": "Analytics"
+        }
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "product_wss_release_internal_name",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "WSS16039"
+        }
+      },
+      "throttleMultiplier": 64
+    },
+    "profile_wss_analytics_dataset_broadcast": {
+      "transport": "msgbus",
+      "dictionary": null,
+      "datasets": [
+        "splitio"
+      ],
+      "transport_config": {
+        "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+        "msgName": "analytics_dataset_broadcast",
+        "processorName": "passthroughComposer",
+        "processorConfig": {
+          "filteredKeys": [
+            "hit_event_id",
+            "hit_action",
+            "Hit.UniqueID",
+            "tracker.type",
+            "__throttle_user_multiplier",
+            "__record.created",
+            "__queue.time.milliseconds",
+            "__event.day.index",
+            "hit_category_0"
+          ]
+        }
+      }
+    },
+    "profile_wss_logs_100p": {
+      "transport": "transport_eng_observability",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "observability"
+      ],
+      "transport_config": {
+        "apikey": "5Q45ukolIB6mUKouR4sHtaXjtDRErnoU6LFISyIB"
+      }
+    },
+    "profile_wss_logs_12p": {
+      "transport": "transport_eng_observability",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "observability"
+      ],
+      "transport_config": {
+        "apikey": "5Q45ukolIB6mUKouR4sHtaXjtDRErnoU6LFISyIB"
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-1]"
+        }
+      },
+      "throttleMultiplier": 8
+    },
+    "profile_wss_logs_1p": {
+      "transport": "transport_eng_observability",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "observability"
+      ],
+      "transport_config": {
+        "apikey": "5Q45ukolIB6mUKouR4sHtaXjtDRErnoU6LFISyIB"
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-3]0"
+        }
+      },
+      "throttleMultiplier": 64
+    },
+    "profile_wss_mosaic_kongapi_100p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "appid": "df77019b-eb61-4417-b1a7-ad644a389fb4",
+      "transport_config": {
+        "apikey": "Bl008CB3UP2s3jEcrFUMa4WmZIYjzOQ98TWLTMZq",
+        "service": "product-wss",
+        "consumer": "core"
+      },
+      "throttleRule": {
+        "meta": 250,
+        "ruleName": "dailyMax"
+      }
+    },
+    "profile_wss_mosaic_kongapi_12p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "appid": "df77019b-eb61-4417-b1a7-ad644a389fb4",
+      "maxDimensionLength": 256,
+      "transport_config": {
+        "apikey": "Bl008CB3UP2s3jEcrFUMa4WmZIYjzOQ98TWLTMZq",
+        "service": "product-wss",
+        "consumer": "core"
+      },
+      "throttleRule": {
+        "meta": 100,
+        "ruleName": "dailyMax"
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-1]"
+        }
+      },
+      "throttleMultiplier": 8
+    },
+    "profile_wss_mosaic_kongapi_1p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "appid": "df77019b-eb61-4417-b1a7-ad644a389fb4",
+      "maxDimensionLength": 256,
+      "transport_config": {
+        "apikey": "Bl008CB3UP2s3jEcrFUMa4WmZIYjzOQ98TWLTMZq",
+        "service": "product-wss",
+        "consumer": "core"
+      },
+      "throttleRule": {
+        "meta": 100,
+        "ruleName": "dailyMax"
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-3]0"
+        }
+      },
+      "throttleMultiplier": 64
+    },
+    "profile_mss_mosaic_kongapi_100p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "mss"
+      ],
+      "appid": "458fa1b2-a07f-42a8-a608-4764244bd594",
+      "transport_config": {
+        "apikey": "htcnZaEGgL9HlFxHQZ7s57zgqTWEORBR6LIKpydc",
+        "service": "products",
+        "consumer": "mss"
+      },
+      "throttleRule": {
+        "meta": 250,
+        "ruleName": "dailyMax"
+      }
+    },
+    "profile_csis_mosaic_kongapi_100p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss"
+      ],
+      "ignoreAttributeRules": true,
+      "appid": "664e00c8-7dc7-4efb-a863-696c9b98c07b",
+      "transport_config": {
+        "apikey": "he69g7DbEw18oHaplLjaP5eReuskrVWc6hD2T6pu",
+        "service": "products",
+        "consumer": "csis"
+      }
+    },
+    "profile_wss_observability_kongapi_1p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "observability"
+      ],
+      "transport_config": {
+        "apikey": "a491iBd8ct4n7GmWWdpEm5vUDV13KsaU1YA5pnTp",
+        "service": "logging",
+        "consumer": "wss"
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-3]0"
+        }
+      },
+      "throttleMultiplier": 64
+    },
+    "profile_wss_observability_kongapi_100p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "observability"
+      ],
+      "transport_config": {
+        "apikey": "a491iBd8ct4n7GmWWdpEm5vUDV13KsaU1YA5pnTp",
+        "service": "logging",
+        "consumer": "wss"
+      },
+      "throttleRule": {
+        "meta": 250,
+        "ruleName": "dailyMax"
+      }
+    },
+    "profile_wss_observability_kongapi_12p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "observability"
+      ],
+      "transport_config": {
+        "apikey": "a491iBd8ct4n7GmWWdpEm5vUDV13KsaU1YA5pnTp",
+        "service": "logging",
+        "consumer": "wss"
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-[0-1]"
+        }
+      },
+      "throttleMultiplier": 8
+    },
+    "profile_ab_test_mosaic_kongapi_100p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_abtest_mosaic",
+      "datasets": [
+        "ab_test"
+      ],
+      "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+      "transport_config": {
+        "apikey": "eKW5FAM71o3cPLamQdUSc7lTXU0BWGKtWVxISA50",
+        "service": "ab-tests",
+        "consumer": "core"
+      },
+      "throttleRule": {
+        "meta": 250,
+        "ruleName": "dailyMax"
+      }
+    },
+    "profile_wss_heartbeat_metrics_mosaic_kongapi": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "da",
+        "ngm"
+      ],
+      "transport_config": {
+        "apikey": "k84Bh3DX5X8jjRAqNfpwJ8E5mM7JwAGy710nM1zD",
+        "service": "product-wss",
+        "consumer": "metrics"
+      },
+      "throttleRule": {
+        "meta": 1,
+        "ruleName": "dailyMax"
+      }
+    },
+    "profile_win10s_mosaic_kongapi_100p": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata"
+      ],
+      "appid": "a053060c-3a34-11e4-8a01-005056b7244f",
+      "transport_config": {
+        "apikey": "Tt9LCGYOlT1hb4e5JhHT57URwhfpaMCOaHP03Mpw",
+        "service": "product-wss",
+        "consumer": "stub"
+      },
+      "throttleRule": {
+        "meta": 100,
+        "ruleName": "dailyMax"
+      }
+    },
+    "profile_wss_error_log_mosaic_kongapi": {
+      "transport": "mosaic_api_v2",
+      "dictionary": "dictionary_wss_mosaic",
+      "datasets": [
+        "default",
+        "content_metadata",
+        "device",
+        "wss",
+        "ngm"
+      ],
+      "maxDimensionLength": 256,
+      "transport_config": {
+        "apikey": "so1QYFQWVH5bghUglhkVZ8Ur8g70QtoP8Jn21o0I",
+        "service": "product-wss",
+        "consumer": "partner"
+      },
+      "throttleRule": {
+        "meta": 250,
+        "ruleName": "dailyMax"
+      },
+      "enableRules": {
+        "sourceType": "data_collector",
+        "name": "Device.Microsoft.Machine.Guid",
+        "rule": {
+          "ruleName": "regex",
+          "meta": "^[0-f]{8}-00[0-7]"
+        }
+      }
+    }
+  }
+}
+

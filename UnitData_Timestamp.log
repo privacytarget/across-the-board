@@ -1,0 +1,1769 @@
+8:05 AM 1/20/2024call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [10:26:59.49] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[941]
+uiaMsg=[entered pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)   9,508,507,648 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="entered pass1"   -uiaCode="941" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [10:27:05.69] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[942]
+uiaMsg=[error happened fixups - pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)   9,508,478,976 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="error happened fixups - pass1"   -uiaCode="942" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [10:31:09.41] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[943]
+uiaMsg=[error happened at init - pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  26,255,519,744 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="error happened at init - pass1"   -uiaCode="943" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [10:34:57.75] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[945]
+uiaMsg=[error happened at preos - pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  24,923,136,000 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="error happened at preos - pass1"   -uiaCode="945" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:07:00.61] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[946]
+uiaMsg=[Error happened at OSUpdate/Install - PASS1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  21,530,488,832 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Error happened at OSUpdate/Install - PASS1"   -uiaCode="946" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:27:56.58] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[947]
+uiaMsg=[error happened at the end of pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  26,747,924,480 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="error happened at the end of pass1"   -uiaCode="947" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:28:41.90] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[948]
+uiaMsg=[error happened at capturing index3 - pass1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  27,169,816,576 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="error happened at capturing index3 - pass1"   -uiaCode="948" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:29:28.44] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[949]
+uiaMsg=[Error happened at DiskUT.bto PASS1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  27,169,705,984 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Error happened at DiskUT.bto PASS1"   -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Fri 04/28/2023]                                                    
+ [11:29:37.94] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\Exclude\PINPROC\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[949]
+uiaMsg=[Error happened at DiskUT.bto PASS1]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[]
+PO=[HE23M01-HSCPTABA]
+Get DPS_PO
+ Volume in drive C has no label.
+ Volume Serial Number is F640-6941
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  27,149,934,592 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Error happened at DiskUT.bto PASS1"   -uiaCode="949" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:14:21.33] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[950]
+uiaMsg=[Entered DPS tweaks at PASS2...]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  29,648,252,928 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Entered DPS tweaks at PASS2..."   -uiaCode="950" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="00092200MD_20230428102634.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=00092200MD_20230428102634.zip
+BaseName=[00092200MD_20230428102634]
+BaseName=[00092200MD_20230428102634]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=00092200MD_20230428102634.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_00092200MD_20230428102634.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:15:55.70] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[950]
+uiaMsg=[Re-entered DPS tweaks at PASS2 after BIOS reset...]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  29,647,261,696 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Re-entered DPS tweaks at PASS2 after BIOS reset..."   -uiaCode="950" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:16:45.97] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[951]
+uiaMsg=[PASS2_FIXUPS]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  30,158,462,976 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="PASS2_FIXUPS"   -uiaCode="951" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:23:07.94] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[952]
+uiaMsg=[Finished - Factory Update phase]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  46,308,929,536 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Finished - Factory Update phase"   -uiaCode="952" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:28:46.96] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[953]
+uiaMsg=[PASS2_OSUPDATE_PI]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  45,096,316,928 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="PASS2_OSUPDATE_PI"   -uiaCode="953" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:45:04.73] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[954]
+uiaMsg=[PASS2_BBV2_PI]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  42,038,628,352 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="PASS2_BBV2_PI"   -uiaCode="954" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:53:52.04] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[956]
+uiaMsg=[PASS2_PostBBV]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  41,247,653,888 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="PASS2_PostBBV"   -uiaCode="956" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:54:14.22] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[957]
+uiaMsg=[Started_BBVClean_phase_in_PASS2]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  41,240,788,992 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Started_BBVClean_phase_in_PASS2"   -uiaCode="957" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:07:46.69] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[958]
+uiaMsg=[BBVLast_END_Windows_trigger_SysPrep_PASS2]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,719,238,144 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="BBVLast_END_Windows_trigger_SysPrep_PASS2"   -uiaCode="958" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:11:08.83] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[961]
+uiaMsg=[Started_2nd_Capture_phase_in_PASS2]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,788,878,336 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Started_2nd_Capture_phase_in_PASS2"   -uiaCode="961" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:12:58.67] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[962]
+uiaMsg=[Completed_2ndCap_in_PASS2]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  41,861,066,752 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Completed_2ndCap_in_PASS2"   -uiaCode="962" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:16:09.69] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[971]
+uiaMsg=[Started - 2nd Specialize]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  40,313,376,768 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Started - 2nd Specialize"   -uiaCode="971" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:16:20.60] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[971]
+uiaMsg=[Finished - 2nd Specialize]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  40,318,640,128 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Finished - 2nd Specialize"   -uiaCode="971" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:20:35.84] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[972]
+uiaMsg=[IN_OA3Proc_CMD]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,656,172,032 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="IN_OA3Proc_CMD"   -uiaCode="972" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:21:20.09] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[0]
+uiaMsg=[END_2PP]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,647,062,528 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="END_2PP"   -uiaCode="0" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:27:52.66] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[973]
+uiaMsg=[Unbundling]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,659,792,896 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="Unbundling"   -uiaCode="973" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+About to end from pass3 Windows 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "DEV_INFO" "PASS3_WinEnd" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:27:53.57] Beginning of the UnitData_ROUNTER.CMD args: "DEV_INFO" "PASS3_WinEnd"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[973]
+uiaMsg=[Unbundling]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,659,461,120 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Dump Device Manager ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS3_WinEnd" -uiaCode="973" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" device
+Programmable interrupt controller
+Motherboard resources
+Motherboard resources
+Microsoft Streaming Service Proxy
+Microsoft ACPI-Compliant Embedded Controller
+McAfeeIntegrationDriver Device
+Intel(R) Dynamic Application Loader Host Interface
+Microsoft ACPI-Compliant Control Method Battery
+Microsoft Wi-Fi Direct Virtual Adapter
+System CMOS/real time clock
+Intel(R) Graphics Command Center
+Volume Manager
+HP Application Driver
+Intel(R) Trusted Execution Engine Interface
+Trusted Platform Module 2.0
+Microphone Array (Realtek(R) Audio)
+Intel(R) Dynamic Tuning Manager
+Intel(R) Display Audio
+Intel(R) UHD Graphics 600
+Microsoft Basic Display Driver
+Standard PS/2 Keyboard
+HP Wireless Button Driver
+Intel(R) Celeron(R)/Pentium(R) Silver Processor PCI Express Root Port - 31DA
+ACPI Thermal Zone
+Microsoft Windows Management Interface for ACPI
+HID-compliant wireless radio controls
+Microsoft Hyper-V Virtualization Infrastructure Driver
+HP TrueVision HD Camera
+High precision event timer
+Intel(R) Celeron(R)/Pentium(R) Silver Processor PCI Express Root Port - 31D6
+Composite Bus Enumerator
+Microsoft Virtual Drive Enumerator
+Microsoft AC Adapter
+Microsoft Storage Spaces Controller
+Microsoft Bluetooth LE Enumerator
+HP Audio Hardware Support Application
+Microsoft Kernel Debug Network Adapter
+Speaker / Headphone (Realtek(R) Audio)
+Realtek PCIe GbE Family Controller
+Intel(R) Graphics Control Panel
+System Firmware
+Intel(R) Celeron(R)/Pentium(R) Silver Processor LPC Controller - 31E8
+Integrated Monitor
+Intel(R) Celeron(R)/Pentium(R) Silver Processor Gaussian Mixture Model - 3190
+ACPI Lid
+Realtek(R) Audio
+Intel(R) iCLS Client
+Wi-Fi
+High Definition Audio Controller
+UMBus Root Bus Enumerator
+Charge Arbitration Driver
+Intel(R) Celeron(R)/Pentium(R) Silver Processor Gaussian Mixture Model - 31D4
+Microsoft Radio Device Enumeration Bus
+Realtek Bluetooth 4.2 Adapter
+Microsoft Device Association Root Enumerator
+ACPI x64-based PC
+Intel SD Host Controller
+PCI Express Root Complex
+Realtek RTL8821CE 802.11ac PCIe Adapter
+Intel(R) Celeron(R)/Pentium(R) Silver Processor PCI Express Root Port - 31D8
+Volume
+Kingston TX2964
+ACPI Power Button
+Microsoft ACPI-Compliant System
+Unknown device
+Microsoft Basic Render Driver
+System timer
+McAfeeIntegrationDriver Device
+Microsoft UEFI-Compliant System
+Microsoft Bluetooth Enumerator
+Intel(R) Serial IO I2C Host Controller - 31B4
+ACPI Fixed Feature Button
+Generic software component
+Volume
+Bluetooth Device (RFCOMM Protocol TDI)
+Bluetooth Device (Personal Area Network)
+Realtek Audio Effects Component
+Intel(R) Power Engine Plug-in
+Volume
+Bluetooth
+USB Composite Device
+Volume
+Microsoft Input Configuration Device
+SD Storage Class Controller
+Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)
+Microsoft GS Wavetable Synth
+ELAN PrecisionTouchpad Filter Driver
+Intel(R) Celeron(R)/Pentium(R) Silver Processor Host Bridge - 31F0
+ELAN HID Class Filter Driver
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+Intel(R) Serial IO GPIO Host Controller - INT3453
+ELAN Input Device
+NDIS Virtual Network Adapter Enumerator
+Intel(R) Celeron(R)/Pentium(R) Silver Processor PCI Express Root Port - 31DB
+USB Root Hub (USB 3.0)
+Intel(R) Serial IO I2C Host Controller - 31BA
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+I2C HID Device
+Realtek Audio Universal Service
+Sound Research Audio Effects Component
+Intel(R) Celeron(R)/Pentium(R) Silver Processor PCI Express Root Port - 31D7
+Microsoft System Management BIOS Driver
+HP HP Laptop 14-cf2xxx
+HP Device Health Service
+Plug and Play Software Device Enumerator
+Intel(R) Dynamic Tuning Processor Participant
+Remote Desktop Device Redirector Bus
+HP Application Enabling Services
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:28:20.01] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[974]
+uiaMsg=[OA3Rpt.cmd_END_Windows_trigger_SysPrep_PASS3]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  03:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,646,693,888 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="OA3Rpt.cmd_END_Windows_trigger_SysPrep_PASS3"   -uiaCode="974" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:29:27.35] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[975]
+uiaMsg=[ENTERED_LOGOUT_PE]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  38,678,798,336 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="ENTERED_LOGOUT_PE"   -uiaCode="975" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "TIMESTAMP_ADD" "UpdateUIACode" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:33:18.02] Beginning of the UnitData_ROUNTER.CMD args: "TIMESTAMP_ADD" "UpdateUIACode"               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[0]
+uiaMsg=[3PP_PHASE]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+09/16/2023  01:32 AM            11,805 00092200MD3B_DPS
+               1 File(s)         11,805 bytes
+               0 Dir(s)  46,897,864,704 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Add timestamp of each UIA code change ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="3PP_PHASE"   -uiaCode="0" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+About to logout from pass3 
+call "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs\UnitData_ROUNTER.CMD" "DISK_INFO,MAIN_UPDATE" "PASS3_PeEndLogout" Result PASSED 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 1:33:19.37] Beginning of the UnitData_ROUNTER.CMD args: "DISK_INFO,MAIN_UPDATE" "PASS3_PeEndLogout" Result PASSED               
+#############################################################
+CPSUnitData_5CG33749P9_20230916001426.XML
+xmlName=[CPSUnitData_5CG33749P9_20230916001426.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[0]
+uiaMsg=[3PP_PHASE]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[PCIJ72AAB00Y]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Pass2, after DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+09/16/2023  01:32 AM            11,805 00092200MD3B_DPS
+               1 File(s)         11,805 bytes
+               0 Dir(s)  46,897,864,704 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Collect Storage Information ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_DiskInfo.exe"  -passName="PASS3_PeEndLogout" -uiaCode="0" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+In WmiQuery_Disk
+after CoInitializeEx
+after CoInitializeSecurity
+after CoCreateInstance
+after ConnectServer
+after CoSetProxyBlanket
+after ExecQuery
+In while 1
+In while  1.5
+In while 2
+Clear vtPropName
+Clear vtPropModel
+Clear vtPropBusType
+Clear vtPropLocation
+Clear vtPropSize
+Clear vtPropPartNum
+Clear vtPropStyle
+Clear vtPropStatus
+In while 1
+errorlevel=0
+==== Update Main Result to PASSED ======
+"C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="PASS3_PeEndLogout" -uiaCode="0" -xml="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" updateattribute "/cps/main/p[contains(@name,'Result')]" value PASSED
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_5CG33749P9_20230916001426.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "C:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+Clean SUBS folder 
+rd /s /q "C:\System.Sav\Util\TDC\MCPP\UnitData\SUBs" 
+RESULT=PASSED 

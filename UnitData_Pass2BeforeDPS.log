@@ -1,0 +1,77 @@
+8:06 AM 1/20/2024call "c:\System.sav\Util\TDC\MCPP\UnitData\Subs\UnitData_ROUNTER.CMD" "MAIN_INFO,TIMESTAMP_ADD,BCU_INFO" "UnitData_Pass2InitXml" 
+Active code page: 437
+#############################################################
+ [Sat 09/16/2023]                                                    
+ [ 0:14:25.78] Beginning of the UnitData_ROUNTER.CMD args: "MAIN_INFO,TIMESTAMP_ADD,BCU_INFO" "UnitData_Pass2InitXml"               
+#############################################################
+CPSUnitData_00092200MD_20230428102634.XML
+xmlName=[CPSUnitData_00092200MD_20230428102634.XML]
+xmlPath=[c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML]
+resultIniPath=[C:\System.sav\WDT\Result.ini]
+Check ErrorNumber= in result.ini
+uiaCode=[950]
+uiaMsg=[Entered DPS tweaks at PASS2...]
+Get PO from MYSYSTEM.ini
+INI_MASTER_PO=[HE23M01-HSCPTABA]
+INI_ORDER_PO=[]
+After pass1 DPS
+MASTER_PO=[HE23M01-HSCPTABA]
+Search order PO, pass2, before DPS
+ORDER_PO=[PCIJ72AAB00Y]
+PO=[PCIJ72AAB00Y]
+Get DPS_PO
+ Volume in drive C is Windows
+ Volume Serial Number is D4D1-7892
+
+ Directory of c:\system.sav
+
+04/28/2023  02:12 AM            14,518 00092200MD3B_DPS
+               1 File(s)         14,518 bytes
+               0 Dir(s)  29,647,523,840 bytes free
+PASS2 scenario, there may be more than one _DPS files, check DPS from MASTER_PO
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+
+---------- C:\SYSTEM.SAV\00092200MD3B_DPS
+;InputPO=HE23M01-HSCPTABA
+DPS_PO=[00092200MD3B_DPS] by master PO 
+==== Dump Main information ======
+        1 file(s) copied.
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\datacollect.exe"  -passName="UnitData_Pass2InitXml" -uiaCode="950" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log" init C:\system.sav\00092200MD3B_DPS
+errorlevel=0
+Return code is zero, check more...
+Check if node LOG File created successfully...
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+Node LOG File is health 
+==== Add timestamp of each UIA code change ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BigData_timestamp.exe"  -passName="UnitData_Pass2InitXml" -uiaCode="950" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+errorlevel=0
+==== Dump BCU variable ======
+"c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\BcuInfo_x64.exe"  -passName="UnitData_Pass2InitXml" -uiaCode="950" -xml="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" -log="c:\System.sav\LOGS\UnitData\UnitData_ROUNTER.log"
+Log output to c:\system.sav\logs\unitdata\unitdata_rounter.log
+errorlevel=0
+Update xml file name from MAIN section
+
+---------- C:\SYSTEM.SAV\WDT\LOGS\CPSUNITDATA_00092200MD_20230428102634.XML
+		<p name="LOG File" value="5CG33749P9_20230916001426.zip"/>
+cscript.exe /nologo "c:\System.Sav\Util\TDC\MCPP\UnitData\Subs\XMLPARSER.VBS" -XML="c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" /func=readnote /xpath="/cps/main/p[contains(@name,'LOG File')]/@value"
+Value=5CG33749P9_20230916001426.zip
+BaseName=[5CG33749P9_20230916001426]
+BaseName=[5CG33749P9_20230916001426]
+ren "c:\system.sav\WDT\Logs\CPSUnitData_00092200MD_20230428102634.XML" "CPSUnitData_5CG33749P9_20230916001426.XML"
+Create PLCFN.cmd for Pin Log Collector
+SET PLCFN=5CG33749P9_20230916001426.zip
+Backup output XML
+xcopy /y /f "c:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML" "c:\System.sav\LOGS\UnitData\"
+C:\system.sav\WDT\Logs\CPSUnitData_5CG33749P9_20230916001426.XML -> C:\System.sav\LOGS\UnitData\CPSUnitData_5CG33749P9_20230916001426.XML
+1 File(s) copied
+RESULT=PASSED 
+Check if there's no "UnitData_Pass2BeforeDPS.cmd" in "c:\system.sav\tweaks\DumpBCU.cmd" 
+
+---------- C:\SYSTEM.SAV\TWEAKS\DUMPBCU.CMD
+%LogIt% " check [C:\System.sav\Util\TDC\MCPP\UnitData\UnitData_Pass2BeforeDPS.cmd]"
+IF EXIST C:\System.sav\Util\TDC\MCPP\UnitData\UnitData_Pass2BeforeDPS.cmd (
+	%LogIt% "   launching [C:\System.sav\Util\TDC\MCPP\UnitData\UnitData_Pass2BeforeDPS.cmd]"
+	start /w /min cmd.exe /c C:\System.sav\Util\TDC\MCPP\UnitData\UnitData_Pass2BeforeDPS.cmd
+DumpBCU.cmd already call UnitData_Pass2BeforeDPS.cmd, skip 
+RESULT=PASSED 
